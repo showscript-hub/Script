@@ -2,6 +2,8 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/showscript-hub/Script
 
 local Players = game:GetService("Players")
 local UIS = game:GetService("UserInputService")
+local SoundService = game:GetService("SoundService")
+local TweenService = game:GetService("TweenService")
 local TextService = game:GetService("TextService")
 
 local player = Players.LocalPlayer
@@ -41,6 +43,7 @@ stroke.Parent = main
 
 local header = Instance.new("Frame")
 header.Name = "Header"
+header.Position = UDim2.fromOffset(0,0)
 header.Size = UDim2.new(1,0,0,44)
 header.BackgroundColor3 = Theme.Card
 header.BorderSizePixel = 0
@@ -50,44 +53,50 @@ header.Parent = main
 Instance.new("UICorner",header).CornerRadius = UDim.new(0,12)
 
 local title = Instance.new("TextLabel")
-title.BackgroundTransparency = 1
 title.Position = UDim2.fromOffset(12,6)
-title.Size = UDim2.new(1,-100,0,30)
-title.Font = Enum.Font.GothamBold
+title.Size = UDim2.new(1,-100,0,20)
+title.BackgroundTransparency = 1
 title.Text = "Steal an Egg All Script"
+title.Font = Enum.Font.GothamBold
 title.TextSize = 13
 title.TextColor3 = Theme.Text
 title.TextXAlignment = Enum.TextXAlignment.Left
 title.Parent = header
 
+local subtitle = Instance.new("TextLabel")
+subtitle.Position = UDim2.fromOffset(12,25)
+subtitle.Size = UDim2.new(1,-100,0,13)
+subtitle.BackgroundTransparency = 1
+subtitle.Text = "All scripts in one place"
+subtitle.Font = Enum.Font.Gotham
+subtitle.TextSize = 7
+subtitle.TextColor3 = Theme.Muted
+subtitle.TextXAlignment = Enum.TextXAlignment.Left
+subtitle.Parent = header
+
 local minimize = Instance.new("TextButton")
 minimize.Name = "Minimize"
-minimize.Size = UDim2.fromOffset(30,30)
-minimize.Position = UDim2.new(1,-68,0,7)
+minimize.Position = UDim2.new(1,-62,0,5)
+minimize.Size = UDim2.fromOffset(28,28)
 minimize.BackgroundTransparency = 1
 minimize.Text = "-"
-minimize.Font = Enum.Font.GothamBold
 minimize.TextSize = 20
 minimize.TextColor3 = Theme.Text
+minimize.Font = Enum.Font.GothamBold
+minimize.ZIndex = 10
 minimize.Parent = header
 
 local close = Instance.new("TextButton")
 close.Name = "Close"
-close.Size = UDim2.fromOffset(30,30)
-close.Position = UDim2.new(1,-35,0,7)
+close.Position = UDim2.new(1,-32,0,5)
+close.Size = UDim2.fromOffset(28,28)
 close.BackgroundTransparency = 1
 close.Text = "X"
-close.Font = Enum.Font.GothamBold
 close.TextSize = 15
 close.TextColor3 = Theme.Text
+close.Font = Enum.Font.GothamBold
+close.ZIndex = 10
 close.Parent = header
-
-local content = Instance.new("Frame")
-content.Name = "Content"
-content.Position = UDim2.fromOffset(65,50)
-content.Size = UDim2.new(1,-75,1,-60)
-content.BackgroundTransparency = 1
-content.Parent = main
 
 local nav = Instance.new("Frame")
 nav.Name = "Navigation"
@@ -99,26 +108,12 @@ nav.Parent = main
 
 Instance.new("UICorner",nav).CornerRadius = UDim.new(0,10)
 
-local function makeNav(text,y)
-	local button = Instance.new("TextButton")
-	button.Size = UDim2.new(1,-8,0,38)
-	button.Position = UDim2.fromOffset(4,y)
-	button.BackgroundTransparency = 1
-	button.BorderSizePixel = 0
-	button.Text = text
-	button.Font = Enum.Font.GothamBold
-	button.TextSize = 7
-	button.TextColor3 = Theme.Muted
-	button.Parent = nav
-
-	Instance.new("UICorner",button).CornerRadius = UDim.new(0,7)
-
-	return button
-end
-
-local homeButton = makeNav("HOME",6)
-local scriptButton = makeNav("SCRIPT",48)
-local settingsButton = makeNav("SETTINGS",90)
+local content = Instance.new("Frame")
+content.Name = "Content"
+content.Position = UDim2.fromOffset(65,50)
+content.Size = UDim2.new(1,-75,1,-60)
+content.BackgroundTransparency = 1
+content.Parent = main
 
 local home = Instance.new("Frame")
 home.Name = "Home"
@@ -126,10 +121,177 @@ home.Size = UDim2.fromScale(1,1)
 home.BackgroundTransparency = 1
 home.Parent = content
 
+local scriptsPage = Instance.new("Frame")
+scriptsPage.Name = "ScriptsPage"
+scriptsPage.Size = UDim2.fromScale(1,1)
+scriptsPage.BackgroundTransparency = 1
+scriptsPage.Visible = false
+scriptsPage.Parent = content
+
+local settingsPage = Instance.new("ScrollingFrame")
+settingsPage.Name = "SettingsPage"
+settingsPage.Size = UDim2.fromScale(1,1)
+settingsPage.BackgroundTransparency = 1
+settingsPage.BorderSizePixel = 0
+settingsPage.ScrollBarThickness = 3
+settingsPage.CanvasSize = UDim2.fromOffset(0,400)
+settingsPage.Visible = false
+settingsPage.Parent = content
+
+local function makeNav(text,y)
+	local b = Instance.new("TextButton")
+	b.Position = UDim2.fromOffset(4,y)
+	b.Size = UDim2.fromOffset(42,38)
+	b.BackgroundTransparency = 1
+	b.BorderSizePixel = 0
+	b.Text = text
+	b.TextSize = 7
+	b.Font = Enum.Font.GothamBold
+	b.TextColor3 = Theme.Muted
+	b.Parent = nav
+
+	Instance.new("UICorner",b).CornerRadius = UDim.new(0,7)
+
+	return b
+end
+
+local homeButton = makeNav("HOME",6)
+local scriptButton = makeNav("SCRIPT",48)
+local settingsButton = makeNav("SETTINGS",90)
+
+local function selectNav(selected)
+	homeButton.BackgroundTransparency = 1
+	scriptButton.BackgroundTransparency = 1
+	settingsButton.BackgroundTransparency = 1
+
+	selected.BackgroundTransparency = 0
+	selected.BackgroundColor3 = Color3.fromRGB(25,40,65)
+end
+
+local function showPage(page)
+	home.Visible = false
+	scriptsPage.Visible = false
+	settingsPage.Visible = false
+	page.Visible = true
+end
+
+selectNav(homeButton)
+
+homeButton.Activated:Connect(function()
+	selectNav(homeButton)
+	showPage(home)
+end)
+
+scriptButton.Activated:Connect(function()
+	selectNav(scriptButton)
+	showPage(scriptsPage)
+end)
+
+settingsButton.Activated:Connect(function()
+	selectNav(settingsButton)
+	showPage(settingsPage)
+end)
+
+local discord = Instance.new("ImageButton")
+discord.Position = UDim2.fromOffset(0,0)
+discord.Size = UDim2.fromOffset(34,34)
+discord.BackgroundTransparency = 1
+discord.Image = "https://www.roblox.com/asset-thumbnail/image?assetId=10367063084&width=420&height=420&format=png"
+discord.Parent = home
+
+Instance.new("UICorner",discord).CornerRadius = UDim.new(1,0)
+
+discord.Activated:Connect(function()
+	if setclipboard then
+		setclipboard(DISCORD_LINK)
+	end
+end)
+
+local discordInfo = Instance.new("TextLabel")
+discordInfo.BackgroundTransparency = 1
+discordInfo.Position = UDim2.fromOffset(0,30)
+discordInfo.Size = UDim2.fromOffset(270,18)
+discordInfo.Font = Enum.Font.Gotham
+discordInfo.Text = "Tap the Discord icon to copy the link"
+discordInfo.TextSize = 8
+discordInfo.TextColor3 = Theme.Muted
+discordInfo.TextXAlignment = Enum.TextXAlignment.Left
+discordInfo.Parent = home
+
+local welcomeHeader = Instance.new("Frame")
+welcomeHeader.BackgroundTransparency = 1
+welcomeHeader.Position = UDim2.fromOffset(0,47)
+welcomeHeader.Size = UDim2.fromOffset(140,22)
+welcomeHeader.Parent = home
+
+local welcomeLabel = Instance.new("TextLabel")
+welcomeLabel.BackgroundTransparency = 1
+welcomeLabel.Size = UDim2.fromOffset(65,22)
+welcomeLabel.Font = Enum.Font.GothamBold
+welcomeLabel.Text = "AntiDetect"
+welcomeLabel.TextSize = 9
+welcomeLabel.TextColor3 = Theme.Text
+welcomeLabel.TextXAlignment = Enum.TextXAlignment.Left
+welcomeLabel.Parent = welcomeHeader
+
+local welcomeOn = Instance.new("TextButton")
+welcomeOn.Position = UDim2.fromOffset(70,0)
+welcomeOn.Size = UDim2.fromOffset(38,16)
+welcomeOn.BackgroundColor3 = Theme.Main
+welcomeOn.Text = "ON"
+welcomeOn.TextSize = 7
+welcomeOn.Font = Enum.Font.GothamBold
+welcomeOn.TextColor3 = Color3.new(1,1,1)
+welcomeOn.AutoButtonColor = false
+welcomeOn.Parent = welcomeHeader
+
+Instance.new("UICorner",welcomeOn).CornerRadius = UDim.new(0,6)
+
+local welcomeState = true
+
+welcomeOn.Activated:Connect(function()
+	welcomeState = not welcomeState
+
+	if welcomeState then
+		welcomeOn.Text = "ON"
+		welcomeOn.BackgroundColor3 = Theme.Main
+	else
+		welcomeOn.Text = "OFF"
+		welcomeOn.BackgroundColor3 = Color3.fromRGB(70,75,85)
+	end
+end)
+
+local avatar = Instance.new("ImageLabel")
+avatar.Position = UDim2.new(1,-36,0,0)
+avatar.Size = UDim2.fromOffset(34,34)
+avatar.BackgroundTransparency = 1
+avatar.Parent = home
+
+Instance.new("UICorner",avatar).CornerRadius = UDim.new(1,0)
+
+local avatarImage = Players:GetUserThumbnailAsync(
+	player.UserId,
+	Enum.ThumbnailType.HeadShot,
+	Enum.ThumbnailSize.Size100x100
+)
+
+avatar.Image = avatarImage
+
+local username = Instance.new("TextLabel")
+username.Position = UDim2.new(1,-150,0,36)
+username.Size = UDim2.fromOffset(145,18)
+username.BackgroundTransparency = 1
+username.Text = "@"..player.Name
+username.Font = Enum.Font.GothamBold
+username.TextSize = 8
+username.TextColor3 = Theme.Text
+username.TextXAlignment = Enum.TextXAlignment.Right
+username.Parent = home
+
 local welcome = Instance.new("Frame")
 welcome.Name = "Welcome"
-welcome.Position = UDim2.fromOffset(0,8)
-welcome.Size = UDim2.fromOffset(270,210)
+welcome.Position = UDim2.fromOffset(0,70)
+welcome.Size = UDim2.fromOffset(270,150)
 welcome.BackgroundColor3 = Theme.Card
 welcome.BorderSizePixel = 0
 welcome.ClipsDescendants = true
@@ -153,12 +315,25 @@ scrollHint.BackgroundTransparency = 1
 scrollHint.Position = UDim2.new(1,-115,0,3)
 scrollHint.Size = UDim2.fromOffset(105,18)
 scrollHint.Font = Enum.Font.GothamBold
-scrollHint.Text = "↕ SWIPE TO SCROLL"
+scrollHint.Text = "SWIPE TO SCROLL"
 scrollHint.TextSize = 7
 scrollHint.TextColor3 = Theme.Main
 scrollHint.TextXAlignment = Enum.TextXAlignment.Right
 scrollHint.ZIndex = 5
-scrollHint.Parent = welcome
+scrollHint.Parent = welcomeScroll
+
+local welcomeText = Instance.new("TextLabel")
+welcomeText.Name = "WelcomeText"
+welcomeText.Position = UDim2.fromOffset(0,58)
+welcomeText.Size = UDim2.new(1,-10,0,0)
+welcomeText.BackgroundTransparency = 1
+welcomeText.Font = Enum.Font.Gotham
+welcomeText.TextSize = 12
+welcomeText.TextWrapped = true
+welcomeText.TextXAlignment = Enum.TextXAlignment.Left
+welcomeText.TextYAlignment = Enum.TextYAlignment.Top
+welcomeText.TextColor3 = Color3.fromRGB(220,230,245)
+welcomeText.Parent = welcomeScroll
 
 local tiktokIcon = Instance.new("ImageLabel")
 tiktokIcon.Position = UDim2.fromOffset(5,6)
@@ -174,7 +349,7 @@ tiktokTitle.Size = UDim2.fromOffset(90,14)
 tiktokTitle.Font = Enum.Font.GothamBold
 tiktokTitle.Text = "Support TikTok"
 tiktokTitle.TextSize = 8
-tiktokTitle.TextColor3 = Color3.new(1,1,1)
+tiktokTitle.TextColor3 = Theme.Text
 tiktokTitle.TextXAlignment = Enum.TextXAlignment.Left
 tiktokTitle.Parent = welcomeScroll
 
@@ -202,54 +377,35 @@ tiktokInfo.TextColor3 = Color3.fromRGB(160,170,185)
 tiktokInfo.TextXAlignment = Enum.TextXAlignment.Left
 tiktokInfo.Parent = welcomeScroll
 
-local welcomeText = Instance.new("TextLabel")
-welcomeText.Name = "WelcomeText"
-welcomeText.Position = UDim2.fromOffset(0,58)
-welcomeText.Size = UDim2.new(1,-10,0,0)
-welcomeText.BackgroundTransparency = 1
-welcomeText.Font = Enum.Font.Gotham
-welcomeText.TextSize = 12
-welcomeText.TextWrapped = true
-welcomeText.TextXAlignment = Enum.TextXAlignment.Left
-welcomeText.TextYAlignment = Enum.TextYAlignment.Top
-welcomeText.TextColor3 = Color3.fromRGB(220,230,245)
-welcomeText.Parent = welcomeScroll
-
-welcomeText.Text =
-	"Welcome to Steal an Egg All Script!\n\n" ..
-	"All scripts are here in one place. Open the " ..
-	"SCRIPT tab and choose the script you want.\n\n" ..
-	"🇵🇭 JOIN OUR PHILIPPINES COMMUNITY!\n\n" ..
-	"Join our Discord to get Egg Notifier alerts, " ..
-	"trading, buying and selling channels, player " ..
-	"help, giveaways, and a place to meet other " ..
-	"Steal an Egg players from the Philippines.\n\n" ..
-	"🥚 Egg Notifier\n" ..
-	"Get updates about eggs and important finds.\n\n" ..
-	"🔄 Trading\n" ..
-	"Find players and arrange fair trades.\n\n" ..
-	"💰 Buy / Sell\n" ..
-	"Share your offers and look for items you want.\n\n" ..
-	"🤝 Community\n" ..
-	"Meet other Filipino players, share tips, " ..
-	"and help grow the Steal an Egg PH community.\n\n" ..
-	"Join us and let's build the Philippines " ..
-	"Steal an Egg community together!\n\n" ..
-	"💬 Tap the TikTok button to copy the link!\n\n" ..
-	"Credit: Chris"
-
 tiktokBox.Activated:Connect(function()
 	if setclipboard then
 		setclipboard(TIKTOK_LINK)
 		tiktokBox.Text = "Copied!"
 
 		task.delay(2,function()
-			if tiktokBox and tiktokBox.Parent then
+			if tiktokBox.Parent then
 				tiktokBox.Text = "@chris"
 			end
 		end)
 	end
 end)
+
+welcomeText.Text =
+	"Welcome to Steal an Egg All Script!\n\n" ..
+	"All scripts are here in one place. Open the SCRIPT tab and choose the script you want.\n\n" ..
+	"JOIN OUR PHILIPPINES COMMUNITY!\n\n" ..
+	"Join our Discord to get Egg Notifier alerts, trading, buying and selling channels, player help, giveaways, and a place to meet other Steal an Egg players from the Philippines.\n\n" ..
+	"Egg Notifier\n" ..
+	"Get updates about eggs and important finds.\n\n" ..
+	"Trading\n" ..
+	"Find players and arrange fair trades.\n\n" ..
+	"Buy / Sell\n" ..
+	"Share your offers and look for items you want.\n\n" ..
+	"Community\n" ..
+	"Meet other Filipino players, share tips, and help grow the Steal an Egg PH community.\n\n" ..
+	"Join us and let's build the Philippines Steal an Egg community together!\n\n" ..
+	"Tap the Discord icon to copy the link!\n\n" ..
+	"Credit: Chris"
 
 task.defer(function()
 	task.wait()
@@ -272,6 +428,67 @@ task.defer(function()
 		0,
 		58 + textSize.Y + 8
 	)
+end)
+
+local minimized = false
+
+minimize.Activated:Connect(function()
+	minimized = not minimized
+
+	if minimized then
+		nav.Visible = false
+		content.Visible = false
+		subtitle.Visible = false
+		main.Size = UDim2.fromOffset(350,44)
+	else
+		main.Size = UDim2.fromOffset(350,270)
+		nav.Visible = true
+		content.Visible = true
+		subtitle.Visible = true
+	end
+end)
+
+close.Activated:Connect(function()
+	gui:Destroy()
+end)
+
+local dragging = false
+local dragStart
+local startPos
+
+header.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1
+		or input.UserInputType == Enum.UserInputType.Touch then
+
+		dragging = true
+		dragStart = input.Position
+		startPos = main.Position
+
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragging = false
+			end
+		end)
+	end
+end)
+
+UIS.InputChanged:Connect(function(input)
+	if not dragging then
+		return
+	end
+
+	if input.UserInputType == Enum.UserInputType.MouseMovement
+		or input.UserInputType == Enum.UserInputType.Touch then
+
+		local delta = input.Position - dragStart
+
+		main.Position = UDim2.new(
+			startPos.X.Scale,
+			startPos.X.Offset + delta.X,
+			startPos.Y.Scale,
+			startPos.Y.Offset + delta.Y
+		)
+	end
 end)
 
 main.Visible = false
