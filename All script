@@ -1,4 +1,4 @@
-https://raw.githubusercontent.com/showscript-hub/Script/refs/heads/main/Report
+loadstring(game:HttpGet("https://raw.githubusercontent.com/showscript-hub/Script/refs/heads/main/Report"))()
 
 local Players = game:GetService("Players")
 local UIS = game:GetService("UserInputService")
