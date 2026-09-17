@@ -759,7 +759,7 @@ end
 
 local function Lkz()
 	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/65bf3459d87ba3ac46350e154b640929.lua"))()
-End
+end
 
 local function Zeroin()
 	loadstring(game:HttpGet("https://zeroinhub.com/api/script"))()
@@ -791,6 +791,12 @@ local function ChilliHub()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()
    
 end
+
+local function OnHub()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/davizin713/ONhub/refs/heads/main/script.lua"))()
+   
+end
+
 
 local function Animation()
     loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Free-animations-112111"))()
@@ -868,7 +874,6 @@ local function showKeyScripts()
 	makeScriptButton("Ajjans hub",AjjansHub)
 	makeScriptButton("Big Foot",BigFoot)
 	makeScriptButton("Speed Hub",SpeedHub)
-    makeScriptButton("Omg Hub",OmgHub)
     makeScriptButton("Night Hub",NightHub)
     makeScriptButton("Zeroin Hub",ZeroinHub)
     makeScriptButton("QuantumqOnyx",QuantumqOnyx)
@@ -900,6 +905,7 @@ local function showKeylessScripts()
     makeScriptButton("Sena Hub",SenaHub)
     makeScriptButton("Vincetore",Vincetore)
     makeScriptButton("Chilli Hub",ChilliHub)
+    makeScriptButton("Om HuB",OnHub)
     
     
 
