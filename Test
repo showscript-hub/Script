@@ -916,6 +916,7 @@ end
 
 local function showVisualScripts()
     clearList()
+
     makeScriptButton("Animation",Animation)
     makeScriptButton("Spawner",Spawner)
     makeScriptButton("UNIVERS HUB GRAPHICS",UNIVERSHUBGRAPHICS)
