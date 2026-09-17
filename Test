@@ -176,7 +176,7 @@ NEW SCRIPTS
 • 1 new script Chilli Hub added to KEYLESS
 
 REMOVED
-• Removed features/scripts that are no longer needed
+• Removed features/scripts that are no longer needed = None remove
 
 SCRIPT
 • If a script is not working, detected, or has another problem, please report it using the Report GUI.
@@ -819,7 +819,7 @@ local function Shader1()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/pshade-ultimate/refs/heads/main/src/cd.lua"))()
 end
 
-local function Shader2
+local function Shader2()
     loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Simple-Shader-37434"))()
 end
 
