@@ -1,3 +1,5 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/showscript-hub/Script/refs/heads/main/Report"))()
+
 local Players = game:GetService("Players")
 local UIS = game:GetService("UserInputService")
 local SoundService = game:GetService("SoundService")
@@ -176,11 +178,11 @@ NEW SCRIPTS
 • 1 new script Chilli Hub added to KEYLESS
 
 REMOVED
-• Removed features/scripts that are no longer needed = None remove
+• Removed features/scripts that are no longer needed = None Remove 
 
-SCRIPT
-• If a script is not working, detected, or has another problem, please report it using the Report GUI.
-• If the GUI is not working correctly or something is missing, please report it using the Report GUI.
+SCRIPT & GUI STATUS
+• If a script is not working, detected, or has another problem, please report it using the Report 
+Gui
 
 DISCORD SERVER
 • Script announcements and updates will be posted in the Discord server.
@@ -334,19 +336,12 @@ avatar.Parent = home
 
 Instance.new("UICorner",avatar).CornerRadius = UDim.new(1,0)
 
-task.spawn(function()
-    local success, image = pcall(function()
-        return Players:GetUserThumbnailAsync(
-            player.UserId,
-            Enum.ThumbnailType.HeadShot,
-            Enum.ThumbnailSize.Size100x100
-        )
-    end)
+local avatarImage = Players:GetUserThumbnailAsync(
+	player.UserId,
+	Enum.ThumbnailType.HeadShot,
+	Enum.ThumbnailSize.Size100x100
+)
 
-    if success and image and avatar and avatar.Parent then
-        avatar.Image = image
-    end
-end)
 avatar.Image = avatarImage
 
 local username = Instance.new("TextLabel")
@@ -681,40 +676,37 @@ layout.Padding = UDim.new(0,5)
 layout.Parent = scriptList
 
 local function MirandaHub()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/miirandahub/loader/refs/heads/main/stealaeggs"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/miirandahub/loader/refs/heads/main/stealaeggs"))()
 end
 
 local function CloverHub()
-    loadstring(game:HttpGet("https://cloverhub.app/clover.lua"))()
+	loadstring(game:HttpGet("https://cloverhub.app/clover.lua"))()
 end
 
 local function AjjansHub()
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/359e97f8618e9008afe5f496184ebb7c.lua"))()
+	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/359e97f8618e9008afe5f496184ebb7c.lua"))()
 end
 
 local function BigFoot()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/hanniii1/Loader/refs/heads/main/BFLoader.lua"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/hanniii1/Loader/refs/heads/main/BFLoader.lua"))()
 end
 
 local function SpeedHub()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
-end
-
-local function OmgHub()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Omgshit/Scripts/main/MainLoader.lua"))()   
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()
 end
 
 local function NightHub()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/WhiteX1208/Scripts/refs/heads/main/StealAnEggs.luau"))()   
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/WhiteX1208/Scripts/refs/heads/main/StealAnEggs.luau"))()   
 end
 
 local function ZeroinHub()
-    loadstring(game:HttpGet("https://zeroinhub.com/api/script"))()   
+	loadstring(game:HttpGet("https://zeroinhub.com/api/script"))()   
 end
 
-local function QuantumqOnyx()
+local function QuantomOnyx()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/flazhy/QuantumOnyx/refs/heads/main/QuantumOnyx.lua"))()
 end
+
 
 local function FyyCommunity()
 	loadstring(game:HttpGet("https://FyyCommunity.my.id"))()
@@ -748,7 +740,6 @@ local function Mcrzhub()
 	loadstring(game:HttpGet("https://flowauth.net/v1/loaders/3c4e87ed34813171b0f8d53a108a7d88.lua"))()
 end
 
-
 local function UbHub()
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/TeamUBHub/UBLoader/refs/heads/main/index/Key.lua"))()
 end
@@ -757,53 +748,55 @@ local function VXEZES()
 	loadstring(game:HttpGet("https://vxezestudio.online/api/scripts/script_G5CGjqj2X3rOS/stream/init"))()
 end
 
+local function Void()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/VoidShell-null/VoidShell-Hub/refs/heads/main/Scripts/StealAnEgg.luau"))()
+end
+
 local function AntiHit()
 	script_key = "Trial"
                                 loadstring(game:HttpGet("https://api.getpolsec.com/scripts/hosted/6582551b42d21c6b7eb55f1d76d8d50ce53cb35592093d6615b5e83437594dc0.lua"))()
 end
 
-local function Void()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/scripts/hosted/6582551b42d21c6b7eb55f1d76d8d50ce53cb35592093d6615b5e83437594dc0.lua"))()
-end
-
 local function Lkz()
 	loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/65bf3459d87ba3ac46350e154b640929.lua"))()
-end
+End
 
 local function Zeroin()
 	loadstring(game:HttpGet("https://zeroinhub.com/api/script"))()
 end
 
 local function Decode()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/ItzYumi/Decode/refs/heads/main/DE%3ACODE.lua"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/ItzYumi/Decode/refs/heads/main/DE%3ACODE.lua"))()
 end
 
 local function BlxyoHub()
-    loadstring(game:HttpGet("https://flowauth.net/v1/loaders/69d3463240384f3a73fbe32c178093a2.lua"))()
+	loadstring(game:HttpGet("https://flowauth.net/v1/loaders/69d3463240384f3a73fbe32c178093a2.lua"))()
 end
 
 local function HoshiHub()
-    loadstring(game:HttpGet("https://hoshihub.site/loader.lua"))()
+	loadstring(game:HttpGet("https://hoshihub.site/loader.lua"))()
 end
 
 local function SenaHub()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/senarblx/sena/refs/heads/main/loader"))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/senarblx/sena/refs/heads/main/loader"))()
 end
 
 local function Vincetore()
-    script_key = "KEYLESS"
+script_key = "KEYLESS"
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/tutorkah104-rgb/Sae/refs/heads/main/Sae.luau"))()
 end
 
-local function ChiliHub()
+
+local function ChilliHub()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/tienkhanh1/spicy/main/Chilli.lua"))()
-  end
+   
+end
 
 local function Animation()
     loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Free-animations-112111"))()
 end
 
-local function spawner()
+local function Spawner()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/bugxiefun/roblox-scripts/refs/heads/main/rblxscripts-stealanegg-spawner"))()
 end
 
@@ -879,7 +872,7 @@ local function showKeyScripts()
     makeScriptButton("Night Hub",NightHub)
     makeScriptButton("Zeroin Hub",ZeroinHub)
     makeScriptButton("QuantumqOnyx",QuantumqOnyx)
-   makeScriptButton("Fyy community",FyyCommunity)
+    makeScriptButton("Fyy community",FyyCommunity)
 
 	task.wait()
 	scriptList.CanvasSize =
@@ -890,7 +883,7 @@ local function showKeylessScripts()
 	clearList()
 
 	makeScriptButton("Finding one player server",FindingOnePlayerServer)
-   makeScriptButton("Bypass Speed",BypassSpeed)
+    makeScriptButton("Bypass Speed",BypassSpeed)
     makeScriptButton("Nasi Rendang",NasiRendang)
 	makeScriptButton("Lennon hub",LennonHub)
 	makeScriptButton("Foxname",Foxname)
@@ -906,6 +899,7 @@ local function showKeylessScripts()
     makeScriptButton("Hoshi Hub",HoshiHub)
     makeScriptButton("Sena Hub",SenaHub)
     makeScriptButton("Vincetore",Vincetore)
+    makeScriptButton("Chilli Hub",ChilliHub)
     
     
 
@@ -916,11 +910,11 @@ end
 
 local function showVisualScripts()
     clearList()
-
     makeScriptButton("Animation",Animation)
     makeScriptButton("Spawner",Spawner)
-    makeScriptButton("UNIVERS HUB GRAPHICS",UNIVERSHUBGRAPHICS)
-    makeScriptButton("Shader",Shader)
+makeScriptButton("UNIVERS HUB 
+GRAPHICS",UNIVERSHUBGRAPHICS)
+makeScriptButton("Shader",Shader)
     makeScriptButton("Shader1",Shader1)
     makeScriptButton("Shader2",Shader2)
 
