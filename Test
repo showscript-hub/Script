@@ -334,12 +334,19 @@ avatar.Parent = home
 
 Instance.new("UICorner",avatar).CornerRadius = UDim.new(1,0)
 
-local avatarImage = Players:GetUserThumbnailAsync(
-	player.UserId,
-	Enum.ThumbnailType.HeadShot,
-	Enum.ThumbnailSize.Size100x100
-)
+task.spawn(function()
+    local success, image = pcall(function()
+        return Players:GetUserThumbnailAsync(
+            player.UserId,
+            Enum.ThumbnailType.HeadShot,
+            Enum.ThumbnailSize.Size100x100
+        )
+    end)
 
+    if success and image and avatar and avatar.Parent then
+        avatar.Image = image
+    end
+end)
 avatar.Image = avatarImage
 
 local username = Instance.new("TextLabel")
