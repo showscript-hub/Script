@@ -664,11 +664,16 @@ visualsTab.Parent = scriptsPage
 Instance.new("UICorner",visualsTab).CornerRadius = UDim.new(0,7)
 
 local scriptList = Instance.new("ScrollingFrame")
+scriptList.Name = "ScriptList"
 scriptList.Position = UDim2.fromOffset(0,33)
-scriptList.Size = UDim2.fromOffset(270,193)
+scriptList.Size = UDim2.new(1,0,1,-33)
 scriptList.BackgroundTransparency = 1
 scriptList.BorderSizePixel = 0
 scriptList.ScrollBarThickness = 3
+scriptList.ScrollingDirection = Enum.ScrollingDirection.Y
+scriptList.AutomaticCanvasSize = Enum.AutomaticSize.Y
+scriptList.CanvasSize = UDim2.fromOffset(0,0)
+scriptList.ClipsDescendants = true
 scriptList.Parent = scriptsPage
 
 local layout = Instance.new("UIListLayout")
