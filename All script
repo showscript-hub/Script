@@ -1,4 +1,4 @@
---// UPDATED SCRIPT • JOIN DISCORD
+
 
 local Players = game:GetService("Players")
 local GuiService = game:GetService("GuiService")
