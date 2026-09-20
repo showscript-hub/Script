@@ -1,1 +1,62 @@
-loadstring(game:HttpGet("https://luasnapper.xyz/files/loaders/452de5a1173a472fbd9275a0e1be5cf7.lua"))()
+--// UPDATED SCRIPT • JOIN DISCORD
+
+local DISCORD_INVITE = "https://discord.gg/FJK6QzNnf7"
+local IMAGE_ID = "rbxthumb://type=Asset&id=85422381974829&w=420&h=420"
+
+local discordBox = Instance.new("Frame")
+discordBox.Name = "JoinDiscordBox"
+discordBox.Size = UDim2.new(1, -20, 0, 105)
+discordBox.BackgroundColor3 = Color3.fromRGB(88, 101, 242)
+discordBox.BorderSizePixel = 0
+discordBox.Parent = parentFrame -- replace with your GUI page/frame
+
+local boxCorner = Instance.new("UICorner")
+boxCorner.CornerRadius = UDim.new(0, 12)
+boxCorner.Parent = discordBox
+
+-- Circular image
+local image = Instance.new("ImageLabel")
+image.Size = UDim2.fromOffset(70, 70)
+image.Position = UDim2.fromOffset(12, 17)
+image.BackgroundTransparency = 1
+image.Image = IMAGE_ID
+image.ScaleType = Enum.ScaleType.Crop
+image.Parent = discordBox
+
+local imageCorner = Instance.new("UICorner")
+imageCorner.CornerRadius = UDim.new(1, 0)
+imageCorner.Parent = image
+
+-- Title
+local title = Instance.new("TextLabel")
+title.Size = UDim2.new(1, -100, 0, 25)
+title.Position = UDim2.fromOffset(92, 13)
+title.BackgroundTransparency = 1
+title.Text = "Updated Script"
+title.TextColor3 = Color3.new(1, 1, 1)
+title.TextSize = 16
+title.Font = Enum.Font.GothamBold
+title.TextXAlignment = Enum.TextXAlignment.Left
+title.Parent = discordBox
+
+-- Join Discord button
+local joinButton = Instance.new("TextButton")
+joinButton.Size = UDim2.fromOffset(130, 36)
+joinButton.Position = UDim2.fromOffset(92, 48)
+joinButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+joinButton.Text = "Join Discord"
+joinButton.TextColor3 = Color3.fromRGB(88, 101, 242)
+joinButton.TextSize = 13
+joinButton.Font = Enum.Font.GothamBold
+joinButton.BorderSizePixel = 0
+joinButton.Parent = discordBox
+
+local buttonCorner = Instance.new("UICorner")
+buttonCorner.CornerRadius = UDim.new(0, 8)
+buttonCorner.Parent = joinButton
+
+joinButton.MouseButton1Click:Connect(function()
+	pcall(function()
+		game:GetService("GuiService"):OpenBrowserWindow(DISCORD_INVITE)
+	end)
+end)
