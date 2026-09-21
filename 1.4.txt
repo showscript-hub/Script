@@ -963,10 +963,6 @@ local layout = Instance.new("UIListLayout")
 layout.Padding = UDim.new(0,5)
 layout.Parent = scriptList
 
-local function MirandaHub()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/miirandahub/loader/refs/heads/main/stealaeggs"))()
-end
-
 local function CloverHub()
 	loadstring(game:HttpGet("https://cloverhub.app/clover.lua"))()
 end
@@ -1003,6 +999,10 @@ end
 
 local function NasiRendang()
 	loadstring(game:HttpGet("https://www.nrlscript.com/raw/y9BUU6LkVW"))()
+end
+
+local function MirandaHub()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/miirandahub/loader/refs/heads/main/stealaeggs"))()
 end
 
 local function LennonHub()
@@ -1193,13 +1193,15 @@ local function showKeyScripts()
 end
 
 local function showKeylessScripts()
-	clearList()
+    clearList()
 
-	    makeScriptButton("Bypass Speed",BypassSpeed)
+    makeScriptButton("Bypass Speed",BypassSpeed)
     makeScriptButton("Nasi Rendang",NasiRendang)
-	makeScriptButton("Foxname",Foxname)
-	makeScriptButton("Mcrzhub",Mcrzhub)
-	makeScriptButton("ub-hub",UbHub)
+    makeScriptButton("Miranda Hub",MirandaHub)
+    makeScriptButton("Lennon Hub",LennonHub)
+    makeScriptButton("Foxname",Foxname)
+    makeScriptButton("Mcrzhub",Mcrzhub)
+    makeScriptButton("ub-hub",UbHub)
     makeScriptButton("VXEZES",VXEZES)
     makeScriptButton("Anti Guard",AntiGuard)
     makeScriptButton("Lkz",Lkz)
@@ -1210,8 +1212,11 @@ local function showKeylessScripts()
     makeScriptButton("Vincetore • UPDATED",Vincetore)
     makeScriptButton("Chilli Hub",ChilliHub)
     makeScriptButton("Tsuo",Tsuo)
-    makeScriptButton("Ouroboros",Ouroboros)
-    
+
+    task.wait()
+    scriptList.CanvasSize =
+        UDim2.fromOffset(0,layout.AbsoluteContentSize.Y + 8)
+end
 
 	task.wait()
 	scriptList.CanvasSize =
