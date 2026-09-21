@@ -1109,11 +1109,12 @@ makeScriptButton("Shader",Shader)
     makeScriptButton("Shader2",Shader2)
     makeScriptButton("Avatar Changer",AvatarChanger)
 
-    task.wait()
+       task.wait()
     scriptList.CanvasSize =
         UDim2.fromOffset(0,layout.AbsoluteContentSize.Y + 8)
 end
 
+local function showVisualScripts()
 keyTab.Activated:Connect(function()
 	keyTab.BackgroundColor3 = Theme.Main
 	keylessTab.BackgroundColor3 = Theme.Card
