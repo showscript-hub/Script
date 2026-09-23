@@ -1,1 +1,219 @@
-loadstring(game:HttpGet("https://obfuscatorhub.vercel.app/api/QGhjbHw"))()
+import tkinter as tk
+from tkinter import ttk, messagebox, scrolledtext
+import webbrowser
+import datetime
+
+class ScriptGUI:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Script GUI - Temporarily Disabled")
+        self.root.geometry("600x500")
+        self.root.minsize(500, 400)
+        
+        # Discord invite link (placeholder - palitan mo ito)
+        self.discord_link = "https://discord.gg/FJK6QzNnf7"
+        
+        # Dark mode state
+        self.dark_mode = False
+        
+        # Setup styles
+        self.style = ttk.Style()
+        self.style.theme_use('clam')
+        
+        # Build UI
+        self.create_widgets()
+        self.apply_theme()
+        
+    def create_widgets(self):
+        # Main container
+        self.main_frame = ttk.Frame(self.root, padding="20")
+        self.main_frame.pack(fill=tk.BOTH, expand=True)
+        
+        # Title
+        self.title_label = ttk.Label(
+            self.main_frame,
+            text="⚠️ Script Temporarily Disabled",
+            font=("Segoe UI", 16, "bold"),
+            foreground="#c0392b"
+        )
+        self.title_label.pack(pady=(0, 10))
+        
+        # Message
+        self.message_label = ttk.Label(
+            self.main_frame,
+            text="This script is temporarily disabled because someone is selling my script.\n"
+                 "Join Discord to announce when it's back.",
+            font=("Segoe UI", 10),
+            justify=tk.CENTER,
+            wraplength=500
+        )
+        self.message_label.pack(pady=(0, 20))
+        
+        # Discord button
+        self.discord_btn = ttk.Button(
+            self.main_frame,
+            text="🔗 Join Discord",
+            command=self.open_discord
+        )
+        self.discord_btn.pack(pady=5, fill=tk.X)
+        
+        # Separator
+        ttk.Separator(self.main_frame, orient='horizontal').pack(fill=tk.X, pady=15)
+        
+        # Extra features (Dagdagan kung ano pwede dagdagan)
+        self.extra_frame = ttk.LabelFrame(self.main_frame, text="Extra Features", padding="10")
+        self.extra_frame.pack(fill=tk.BOTH, expand=True, pady=5)
+        
+        # Dark mode toggle
+        self.dark_var = tk.BooleanVar(value=False)
+        self.dark_check = ttk.Checkbutton(
+            self.extra_frame,
+            text="🌙 Dark Mode",
+            variable=self.dark_var,
+            command=self.toggle_dark_mode
+        )
+        self.dark_check.pack(anchor=tk.W, pady=2)
+        
+        # Status label
+        self.status_var = tk.StringVar(value="Status: Disabled")
+        self.status_label = ttk.Label(
+            self.extra_frame,
+            textvariable=self.status_var,
+            font=("Segoe UI", 9, "italic")
+        )
+        self.status_label.pack(anchor=tk.W, pady=5)
+        
+        # Log area
+        ttk.Label(self.extra_frame, text="Logs:").pack(anchor=tk.W)
+        self.log_area = scrolledtext.ScrolledText(
+            self.extra_frame,
+            height=6,
+            width=60,
+            state='disabled',
+            font=("Consolas", 9)
+        )
+        self.log_area.pack(fill=tk.BOTH, expand=True, pady=5)
+        
+        # Buttons row
+        btn_frame = ttk.Frame(self.extra_frame)
+        btn_frame.pack(fill=tk.X, pady=5)
+        
+        self.check_btn = ttk.Button(
+            btn_frame,
+            text="🔄 Check for Updates",
+            command=self.check_updates
+        )
+        self.check_btn.pack(side=tk.LEFT, padx=2)
+        
+        self.clear_btn = ttk.Button(
+            btn_frame,
+            text="🗑️ Clear Logs",
+            command=self.clear_logs
+        )
+        self.clear_btn.pack(side=tk.LEFT, padx=2)
+        
+        self.about_btn = ttk.Button(
+            btn_frame,
+            text="ℹ️ About",
+            command=self.show_about
+        )
+        self.about_btn.pack(side=tk.LEFT, padx=2)
+        
+        # Status bar at bottom
+        self.bottom_status = ttk.Label(
+            self.root,
+            text="Ready",
+            relief=tk.SUNKEN,
+            anchor=tk.W,
+            padding=(5, 2)
+        )
+        self.bottom_status.pack(side=tk.BOTTOM, fill=tk.X)
+        
+        # Log initial message
+        self.log("GUI started. Script is currently disabled.")
+        self.log(f"Discord link: {self.discord_link}")
+        
+    def apply_theme(self):
+        """Apply light or dark theme."""
+        if self.dark_mode:
+            bg = "#2b2b2b"
+            fg = "#ffffff"
+            entry_bg = "#3c3c3c"
+            entry_fg = "#ffffff"
+            self.style.configure("TFrame", background=bg)
+            self.style.configure("TLabel", background=bg, foreground=fg)
+            self.style.configure("TLabelframe", background=bg, foreground=fg)
+            self.style.configure("TLabelframe.Label", background=bg, foreground=fg)
+            self.style.configure("TCheckbutton", background=bg, foreground=fg)
+            self.style.configure("TButton", background="#444444", foreground=fg)
+            self.style.map("TButton", background=[("active", "#555555")])
+            self.root.configure(bg=bg)
+            self.log_area.configure(bg=entry_bg, fg=entry_fg, insertbackground=fg)
+            self.bottom_status.configure(background=bg, foreground=fg)
+        else:
+            bg = "#f0f0f0"
+            fg = "#000000"
+            entry_bg = "#ffffff"
+            entry_fg = "#000000"
+            self.style.configure("TFrame", background=bg)
+            self.style.configure("TLabel", background=bg, foreground=fg)
+            self.style.configure("TLabelframe", background=bg, foreground=fg)
+            self.style.configure("TLabelframe.Label", background=bg, foreground=fg)
+            self.style.configure("TCheckbutton", background=bg, foreground=fg)
+            self.style.configure("TButton", background="#e1e1e1", foreground=fg)
+            self.style.map("TButton", background=[("active", "#d1d1d1")])
+            self.root.configure(bg=bg)
+            self.log_area.configure(bg=entry_bg, fg=entry_fg, insertbackground=fg)
+            self.bottom_status.configure(background=bg, foreground=fg)
+    
+    def toggle_dark_mode(self):
+        self.dark_mode = self.dark_var.get()
+        self.apply_theme()
+        self.log(f"Dark mode {'ON' if self.dark_mode else 'OFF'}")
+    
+    def open_discord(self):
+        try:
+            webbrowser.open(self.discord_link)
+            self.log("Opening Discord invite...")
+            self.bottom_status.configure(text="Opening Discord...")
+        except Exception as e:
+            messagebox.showerror("Error", f"Could not open link: {e}")
+            self.log(f"ERROR: {e}")
+    
+    def check_updates(self):
+        # Placeholder for update check logic
+        self.log("Checking for updates...")
+        self.bottom_status.configure(text="Checking for updates...")
+        # Simulate a check
+        self.root.after(1000, lambda: self.log("No updates available. Script still disabled."))
+        self.root.after(1000, lambda: self.bottom_status.configure(text="Ready"))
+    
+    def clear_logs(self):
+        self.log_area.configure(state='normal')
+        self.log_area.delete(1.0, tk.END)
+        self.log_area.configure(state='disabled')
+        self.log("Logs cleared.")
+    
+    def show_about(self):
+        about_text = (
+            "Script GUI Template\n"
+            "Version 1.0\n\n"
+            "This is a placeholder GUI for a temporarily disabled script.\n"
+            "You can add more features as needed.\n\n"
+            "Dagdagan kung ano pwede dagdagan."
+        )
+        messagebox.showinfo("About", about_text)
+        self.log("About dialog shown.")
+    
+    def log(self, message):
+        """Add a timestamped message to the log area."""
+        timestamp = datetime.datetime.now().strftime("%H:%M:%S")
+        self.log_area.configure(state='normal')
+        self.log_area.insert(tk.END, f"[{timestamp}] {message}\n")
+        self.log_area.see(tk.END)
+        self.log_area.configure(state='disabled')
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = ScriptGUI(root)
+    root.mainloop()
