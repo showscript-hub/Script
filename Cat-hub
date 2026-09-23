@@ -1,211 +1,166 @@
-import tkinter as tk
-from tkinter import ttk, messagebox, scrolledtext
-import webbrowser
-import datetime
-import sys
-import traceback
+--[[
+    Script Temporarily Disabled GUI
+    Discord: https://discord.gg/FJK6QzNnf7
+]]
 
-DISCORD_LINK = "https://discord.gg/FJK6QzNnf7"
+local DiscordLink = "https://discord.gg/FJK6QzNnf7"
+local CoreGui = game:GetService("CoreGui")
+local TweenService = game:GetService("TweenService")
+local Players = game:GetService("Players")
 
-class ScriptGUI:
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Script GUI - Temporarily Disabled")
-        self.root.geometry("650x550")
-        self.root.minsize(520, 450)
-        self.dark_mode = False
+-- Linisin ang lumang GUI kung meron
+if CoreGui:FindFirstChild("DisabledScriptGui") then
+    CoreGui.DisabledScriptGui:Destroy()
+end
 
-        self.style = ttk.Style()
-        try:
-            self.style.theme_use('clam')
-        except tk.TclError:
-            pass
+-- ================= MAIN GUI =================
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "DisabledScriptGui"
+ScreenGui.ResetOnSpawn = false
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.Parent = CoreGui
 
-        self.create_widgets()
-        self.apply_theme()
+local MainFrame = Instance.new("Frame")
+MainFrame.Name = "MainFrame"
+MainFrame.Size = UDim2.new(0, 460, 0, 340)
+MainFrame.Position = UDim2.new(0.5, -230, 0.5, -170)
+MainFrame.BackgroundColor3 = Color3.fromRGB(25, 25, 30)
+MainFrame.BorderSizePixel = 0
+MainFrame.Active = true
+MainFrame.Draggable = true
+MainFrame.Parent = ScreenGui
 
-    def create_widgets(self):
-        # ---- Main container ----
-        self.main_frame = ttk.Frame(self.root, padding="20")
-        self.main_frame.pack(fill=tk.BOTH, expand=True)
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 12)
+UICorner.Parent = MainFrame
 
-        # ---- Title ----
-        self.title_label = ttk.Label(
-            self.main_frame,
-            text="⚠️ Script Temporarily Disabled",
-            font=("Segoe UI", 16, "bold"),
-            foreground="#c0392b"
-        )
-        self.title_label.pack(pady=(0, 10))
+local UIStroke = Instance.new("UIStroke")
+UIStroke.Color = Color3.fromRGB(220, 50, 50)
+UIStroke.Thickness = 2
+UIStroke.Parent = MainFrame
 
-        # ---- Message ----
-        self.message_label = ttk.Label(
-            self.main_frame,
-            text=("This script is temporarily disabled because someone is selling my script.\n"
-                  "Join Discord to get announcements when it's back online."),
-            font=("Segoe UI", 10),
-            justify=tk.CENTER,
-            wraplength=520
-        )
-        self.message_label.pack(pady=(0, 20))
+-- Title
+local TitleLabel = Instance.new("TextLabel")
+TitleLabel.Size = UDim2.new(1, 0, 0, 55)
+TitleLabel.Position = UDim2.new(0, 0, 0, 10)
+TitleLabel.BackgroundTransparency = 1
+TitleLabel.Text = "⚠️ Script Temporarily Disabled"
+TitleLabel.TextColor3 = Color3.fromRGB(255, 80, 80)
+TitleLabel.TextScaled = true
+TitleLabel.Font = Enum.Font.GothamBold
+TitleLabel.Parent = MainFrame
 
-        # ---- Discord Button ----
-        self.discord_btn = tk.Button(
-            self.main_frame,
-            text="🔗 Join Discord",
-            font=("Segoe UI", 11, "bold"),
-            bg="#5865F2",
-            fg="white",
-            activebackground="#4752C4",
-            activeforeground="white",
-            cursor="hand2",
-            relief=tk.FLAT,
-            padx=10, pady=8,
-            command=self.open_discord
-        )
-        self.discord_btn.pack(pady=5, fill=tk.X)
+-- Message
+local MessageLabel = Instance.new("TextLabel")
+MessageLabel.Size = UDim2.new(0.9, 0, 0, 80)
+MessageLabel.Position = UDim2.new(0.05, 0, 0.22, 0)
+MessageLabel.BackgroundTransparency = 1
+MessageLabel.Text = "This script is temporarily disabled because someone is selling my script.\n\nJoin Discord to get announcements when it's back online."
+MessageLabel.TextColor3 = Color3.fromRGB(220, 220, 220)
+MessageLabel.TextSize = 14
+MessageLabel.Font = Enum.Font.Gotham
+MessageLabel.TextWrapped = true
+MessageLabel.Parent = MainFrame
 
-        # ---- Separator ----
-        ttk.Separator(self.main_frame, orient='horizontal').pack(fill=tk.X, pady=15)
+-- Discord Button
+local DiscordButton = Instance.new("TextButton")
+DiscordButton.Size = UDim2.new(0.8, 0, 0, 48)
+DiscordButton.Position = UDim2.new(0.1, 0, 0.56, 0)
+DiscordButton.BackgroundColor3 = Color3.fromRGB(88, 101, 242)
+DiscordButton.Text = "🔗 Join Discord"
+DiscordButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+DiscordButton.TextSize = 17
+DiscordButton.Font = Enum.Font.GothamBold
+DiscordButton.Parent = MainFrame
 
-        # ---- Extra features ----
-        self.extra_frame = ttk.LabelFrame(self.main_frame, text="Extra Features", padding="10")
-        self.extra_frame.pack(fill=tk.BOTH, expand=True, pady=5)
+local BtnCorner = Instance.new("UICorner")
+BtnCorner.CornerRadius = UDim.new(0, 8)
+BtnCorner.Parent = DiscordButton
 
-        # Dark mode toggle
-        self.dark_var = tk.BooleanVar(value=False)
-        self.dark_check = ttk.Checkbutton(
-            self.extra_frame,
-            text="🌙 Dark Mode",
-            variable=self.dark_var,
-            command=self.toggle_dark_mode
-        )
-        self.dark_check.pack(anchor=tk.W, pady=2)
+-- Extra Buttons (Dagdagan)
+local CopyButton = Instance.new("TextButton")
+CopyButton.Size = UDim2.new(0.38, 0, 0, 38)
+CopyButton.Position = UDim2.new(0.1, 0, 0.78, 0)
+CopyButton.BackgroundColor3 = Color3.fromRGB(50, 50, 55)
+CopyButton.Text = "📋 Copy Link"
+CopyButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CopyButton.TextSize = 14
+CopyButton.Font = Enum.Font.Gotham
+CopyButton.Parent = MainFrame
 
-        # Status
-        self.status_var = tk.StringVar(value="Status: Disabled")
-        self.status_label = ttk.Label(
-            self.extra_frame,
-            textvariable=self.status_var,
-            font=("Segoe UI", 9, "italic")
-        )
-        self.status_label.pack(anchor=tk.W, pady=5)
+local CopyCorner = Instance.new("UICorner")
+CopyCorner.CornerRadius = UDim.new(0, 8)
+CopyCorner.Parent = CopyButton
 
-        # Logs
-        ttk.Label(self.extra_frame, text="Logs:").pack(anchor=tk.W)
-        self.log_area = scrolledtext.ScrolledText(
-            self.extra_frame, height=6, width=60,
-            state='disabled', font=("Consolas", 9)
-        )
-        self.log_area.pack(fill=tk.BOTH, expand=True, pady=5)
+local CloseButton = Instance.new("TextButton")
+CloseButton.Size = UDim2.new(0.38, 0, 0, 38)
+CloseButton.Position = UDim2.new(0.52, 0, 0.78, 0)
+CloseButton.BackgroundColor3 = Color3.fromRGB(50, 50, 55)
+CloseButton.Text = "❌ Close"
+CloseButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseButton.TextSize = 14
+CloseButton.Font = Enum.Font.Gotham
+CloseButton.Parent = MainFrame
 
-        # Buttons row
-        btn_frame = ttk.Frame(self.extra_frame)
-        btn_frame.pack(fill=tk.X, pady=5)
+local CloseCorner = Instance.new("UICorner")
+CloseCorner.CornerRadius = UDim.new(0, 8)
+CloseCorner.Parent = CloseButton
 
-        ttk.Button(btn_frame, text="🔄 Check Updates",
-                   command=self.check_updates).pack(side=tk.LEFT, padx=2)
-        ttk.Button(btn_frame, text="🗑️ Clear Logs",
-                   command=self.clear_logs).pack(side=tk.LEFT, padx=2)
-        ttk.Button(btn_frame, text="ℹ️ About",
-                   command=self.show_about).pack(side=tk.LEFT, padx=2)
-        ttk.Button(btn_frame, text="📋 Copy Discord Link",
-                   command=self.copy_link).pack(side=tk.LEFT, padx=2)
+-- Status Bar (Dagdagan)
+local StatsLabel = Instance.new("TextLabel")
+StatsLabel.Size = UDim2.new(1, 0, 0, 25)
+StatsLabel.Position = UDim2.new(0, 0, 1, -28)
+StatsLabel.BackgroundTransparency = 1
+StatsLabel.Text = "Status: Disabled | FPS: -- | Ping: --"
+StatsLabel.TextColor3 = Color3.fromRGB(130, 130, 140)
+StatsLabel.TextSize = 12
+StatsLabel.Font = Enum.Font.Gotham
+StatsLabel.Parent = MainFrame
 
-        # Status bar
-        self.bottom_status = ttk.Label(
-            self.root, text="Ready", relief=tk.SUNKEN,
-            anchor=tk.W, padding=(5, 2)
-        )
-        self.bottom_status.pack(side=tk.BOTTOM, fill=tk.X)
+-- ================= FUNCTIONS =================
+DiscordButton.MouseButton1Click:Connect(function()
+    pcall(function()
+        setclipboard(DiscordLink)
+    end)
+    DiscordButton.Text = "✅ Link Copied!"
+    DiscordButton.BackgroundColor3 = Color3.fromRGB(50, 200, 100)
+    task.wait(1.5)
+    DiscordButton.Text = "🔗 Join Discord"
+    DiscordButton.BackgroundColor3 = Color3.fromRGB(88, 101, 242)
+end)
 
-        self.log("GUI started. Script is currently disabled.")
-        self.log(f"Discord link: {DISCORD_LINK}")
+CopyButton.MouseButton1Click:Connect(function()
+    pcall(function()
+        setclipboard(DiscordLink)
+    end)
+    CopyButton.Text = "✅ Copied!"
+    task.wait(1.2)
+    CopyButton.Text = "📋 Copy Link"
+end)
 
-    def apply_theme(self):
-        if self.dark_mode:
-            bg, fg, entry_bg, entry_fg = "#2b2b2b", "#ffffff", "#3c3c3c", "#ffffff"
-        else:
-            bg, fg, entry_bg, entry_fg = "#f0f0f0", "#000000", "#ffffff", "#000000"
+CloseButton.MouseButton1Click:Connect(function()
+    local closeTween = TweenService:Create(
+        MainFrame,
+        TweenInfo.new(0.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
+        {Size = UDim2.new(0, 0, 0, 0), Position = UDim2.new(0.5, 0, 0.5, 0)}
+    )
+    closeTween:Play()
+    closeTween.Completed:Connect(function()
+        ScreenGui:Destroy()
+    end)
+end)
 
-        self.style.configure("TFrame", background=bg)
-        self.style.configure("TLabel", background=bg, foreground=fg)
-        self.style.configure("TLabelframe", background=bg, foreground=fg)
-        self.style.configure("TLabelframe.Label", background=bg, foreground=fg)
-        self.style.configure("TCheckbutton", background=bg, foreground=fg)
-        self.style.configure("TButton", background="#e1e1e1", foreground="#000000")
-        self.root.configure(bg=bg)
-        self.log_area.configure(bg=entry_bg, fg=entry_fg, insertbackground=fg)
-        self.bottom_status.configure(background=bg, foreground=fg)
+-- FPS / Ping Loop
+task.spawn(function()
+    while MainFrame.Parent do
+        local fps = math.floor(1 / task.wait())
+        local ping = 0
+        pcall(function()
+            ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue()
+        end)
+        StatsLabel.Text = string.format("Status: Disabled | FPS: %d | Ping: %d ms", fps, math.floor(ping))
+        task.wait(1)
+    end
+end)
 
-    def toggle_dark_mode(self):
-        self.dark_mode = self.dark_var.get()
-        self.apply_theme()
-        self.log(f"Dark mode {'ON' if self.dark_mode else 'OFF'}")
-
-    def open_discord(self):
-        try:
-            webbrowser.open(DISCORD_LINK)
-            self.log("Opening Discord invite...")
-            self.bottom_status.configure(text="Opening Discord...")
-        except Exception as e:
-            messagebox.showerror("Error", f"Could not open link:\n{e}")
-            self.log(f"ERROR: {e}")
-
-    def copy_link(self):
-        try:
-            self.root.clipboard_clear()
-            self.root.clipboard_append(DISCORD_LINK)
-            self.log("Discord link copied to clipboard.")
-            self.bottom_status.configure(text="Link copied!")
-        except Exception as e:
-            self.log(f"ERROR: {e}")
-
-    def check_updates(self):
-        self.log("Checking for updates...")
-        self.bottom_status.configure(text="Checking...")
-        self.root.after(1000, lambda: self.log("No updates. Script still disabled."))
-        self.root.after(1000, lambda: self.bottom_status.configure(text="Ready"))
-
-    def clear_logs(self):
-        self.log_area.configure(state='normal')
-        self.log_area.delete(1.0, tk.END)
-        self.log_area.configure(state='disabled')
-        self.log("Logs cleared.")
-
-    def show_about(self):
-        messagebox.showinfo(
-            "About",
-            "Script GUI Template\nVersion 1.1\n\n"
-            "This is a placeholder GUI for a temporarily disabled script.\n"
-            "Dagdagan kung ano pwede dagdagan."
-        )
-        self.log("About dialog shown.")
-
-    def log(self, message):
-        ts = datetime.datetime.now().strftime("%H:%M:%S")
-        self.log_area.configure(state='normal')
-        self.log_area.insert(tk.END, f"[{ts}] {message}\n")
-        self.log_area.see(tk.END)
-        self.log_area.configure(state='disabled')
-
-
-def main():
-    try:
-        root = tk.Tk()
-        app = ScriptGUI(root)
-        root.mainloop()
-    except tk.TclError as e:
-        print("❌ Tkinter could not start (no display?):", e)
-        print("   - Sa Windows: reinstall Python with 'tcl/tk' option")
-        print("   - Sa Linux: sudo apt install python3-tk")
-        print("   - Sa Termux/Android: pkg install python-tkinter x11-repo")
-        input("Press Enter to exit...")
-    except Exception:
-        print("❌ Unexpected error:")
-        traceback.print_exc()
-        input("Press Enter to exit...")
-
-
-if __name__ == "__main__":
-    main()
+print("✅ GUI Loaded! Discord:", DiscordLink)
