@@ -1,1 +1,1 @@
-loadstring(game:HttpGet("https://flowauth.net/v1/loaders/da401e843aae6bfe350a72e267ec13ab.lua"))()
+loadstring(game:HttpGet("https://obfuscatorhub.lol/api/secret"))()
