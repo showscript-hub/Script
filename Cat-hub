@@ -1,2 +1,2 @@
 --- loader
-loadstring(game:HttpGet("https://flowauth.net/v1/loaders/33a6534ee868fe62f9a84a86da1aa836.lua"))()
+loadstring(game:HttpGet("https://api.xhider.xyz/files/v4/loaders/64fe01bc9d814452d455cb64b38ba4fd.lua"))()
